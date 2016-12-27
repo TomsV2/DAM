@@ -1,0 +1,70 @@
+{
+  "semana": {
+    "lunes": {
+      "tarea": [
+        {
+          "-orden": "1",
+          "#text": "Ir a clase"
+        },
+        {
+          "-orden": "2",
+          "#text": "Estudiar Lenguaje de Marcas"
+        }
+      ]
+    },
+    "martes": {
+      "tarea": [
+        {
+          "-orden": "1",
+          "#text": "Ir a clase"
+        },
+        {
+          "-orden": "2",
+          "#text": "Estudiar Programacion"
+        }
+      ]
+    },
+    "miercoles": {
+      "tarea": [
+        {
+          "-orden": "1",
+          "#text": "Ir a clase"
+        },
+        {
+          "-orden": "2",
+          "#text": "Estudiar Base de Datos"
+        }
+      ]
+    },
+    "jueves": {
+      "tarea": [
+        {
+          "-orden": "1",
+          "#text": "Ir a clase"
+        },
+        {
+          "-orden": "2",
+          "#text": "Estudiar Sistemas"
+        }
+      ]
+    },
+    "viernes": {
+      "tarea": [
+        {
+          "-orden": "1",
+          "#text": "Ir a clase"
+        },
+        {
+          "-orden": "2",
+          "#text": "Estudiar Entorno"
+        },
+        {
+          "-orden": "3",
+          "#text": "Salir con mis amigos"
+        }
+      ]
+    },
+    "sabado": { "tarea": "Disfrutar de la libertad" },
+    "domingo": { "tarea": "Disfrutar de la libertad" }
+  }
+}

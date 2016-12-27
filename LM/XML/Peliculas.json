@@ -1,0 +1,27 @@
+{
+  "directorio_peliculas": {
+    "pelicula": [
+      {
+        "-num_pelicula": "1",
+        "nombre": "Kokoro ga Sakebitagatterunda",
+        "year": "2015",
+        "director": "Tatsuyuki Nagai",
+        "tipo": "Animacion"
+      },
+      {
+        "-num_pelicula": "2",
+        "nombre": "Gintama Yorozuya yo Eien Nare",
+        "year": "2013",
+        "director": "Yoichi Fujita",
+        "tipo": "Animacion"
+      },
+      {
+        "-num_pelicula": "3",
+        "nombre": "Hoshi wo Ou Kodomo",
+        "year": "2011",
+        "director": "Makoto Shinkai",
+        "tipo": "Animacion"
+      }
+    ]
+  }
+}

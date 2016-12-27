@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<receta>
+	<tipo>Normal</tipo>
+	<medico Num_Colegiado="8905674">Eustaquio</medico>
+	<fecha>11/12/13</fecha>
+	<medicamento>
+		<nombre>Aspirina</nombre>
+		<marca>Cualquiera</marca>
+		<presentacion>Sobres</presentacion>
+	</medicamento>
+	<conjunto_alternativo>
+		<alternativo pref="1">Paracetamol</alternativo>
+		<alternativo pref="2">Dalsy</alternativo>
+		<alternativo pref="3">Ibuprofeno</alternativo>
+	</conjunto_alternativo>
+</receta>

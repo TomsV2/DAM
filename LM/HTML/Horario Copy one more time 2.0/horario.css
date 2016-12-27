@@ -1,0 +1,53 @@
+table{
+border-collapse: collapse;
+margin: auto;
+}
+
+caption{
+font-family: arial black;
+font-size: 20px;
+}
+
+body { 
+text-align: center;
+font-family: arial;
+color: black;
+}
+td{
+font-family: calibri;
+text-align: center;
+font-size: 18px;
+}
+
+th{
+width: 150px;
+height: 30px;
+color:black;
+background-color: #F5EFEF;
+font-family: arial;
+}
+
+#entorno{
+background-color: #C7FFFD;
+}
+
+#bd {
+background-color: #FAFFA9;
+}
+
+#fol{
+background-color: #FAD5EF;
+}
+
+#sis{
+background-color: #FFB978;
+}
+
+#prog{
+background-color: #FA6363;
+}
+
+#lm{
+background-color: #E1FF72;
+}
+

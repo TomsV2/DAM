@@ -1,0 +1,143 @@
+body{
+	background-color: #D1C4E9;
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+header{
+	background-color: #673AB7;
+	padding: 10px;
+    text-align: center;
+}
+
+nav{
+    background-color: #7E57C2;
+	padding: 20px;
+	text-align: center;
+    margin-bottom: 0px;
+}
+
+article{
+    text-align: center;
+    font-family: arial black;
+    font-size: 30px;
+    color: #5E35B1;
+    background-color: #EDE7F6;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+footer{
+    background-color: #7E57C2;
+    padding: 10px;
+    text-align: center;
+    font-family: arial black;
+    font-size: 16px;
+    color:#EDE7F6;
+}
+
+b{
+    font-size: 20px;
+    color:#EDE7F6;
+}
+
+a{
+    font-family: arial black;
+}
+
+a:link {
+    color: #EDE7F6;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: #EDE7F6;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #311B92;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: #311B92;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+ol{
+    text-align: left;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7E57C2;
+}
+
+li a{
+    display: block;
+    color: #7E57C2;
+    text-align: center;
+    padding: 30px 36px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #B39DDB;
+}
+
+li {
+    float: left;
+}
+
+form{
+    font-family: arial black;
+    font-size: 16px;
+}
+figure{
+  background-color: #B39DDB;
+  border-radius: 60px;  
+}
+
+#spain{
+    float: right;
+    width:  3%;
+    height: 3%;
+
+}
+
+#uk{
+    float: right;
+    width: 3%;
+    height: 3%;
+}
+
+#producto{
+    width: 25%;
+    height: 25%;
+}
+
+#descripcion{
+    font-size: 18px;
+}
+
+#licencia{
+    font-size: 18px;
+}
+
+#sub{
+    font-size: 14px;
+    padding-left: 15px;
+    color: #7E57C2;
+}
+
+#info{
+    color:#7E57C2;
+}

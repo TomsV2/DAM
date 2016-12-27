@@ -1,0 +1,18 @@
+{
+  "mensaje": {
+    "remite": {
+      "nombre": "Alfredo Reino",
+      "email": "alf@ibium.com"
+    },
+    "destinatario": {
+      "nombre": "Bill Clinton",
+      "email": "president@whitehouse.gov"
+    },
+    "asunto": "Hola Bill",
+    "texto": {
+      "saludo": "Buenos dias presidente",
+      "cuerpo": "Hoy hace un dia muy bonito, ¿te apetece salir a dar un paseo?",
+      "despedida": "Un cordial saludo de un completo desconocido"
+    }
+  }
+}

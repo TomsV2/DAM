@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registro_arboles>
+
+	<arbol id="1" nombre="Acer monspessulanum">
+		<nombre_comun>Arce de Montpellier, Arce menor</nombre_comun>
+		<vegetacion>Caducifolio</vegetacion>
+		<altura>De 6 a 10 metros</altura>
+		<estructura>
+			<copa>Esférica</copa>
+			<tronco>Recto con bifurcaciones</tronco>
+			<ramaje>Colgante</ramaje>
+		</estructura>
+		<color_primavera>Verde brillante, enves verde blanquecino</color_primavera>
+		<resistencia_heladas>Hasta -15ºC</resistencia_heladas>
+	</arbol>
+
+	<arbol id="2" nombre="Ola europea">
+		<nombre_comun>Olivo</nombre_comun>
+		<vegetacion>Perenne</vegetacion>
+		<altura>De 8 a 15 metros</altura>
+		<estructura>
+			<copa>Irregular</copa>
+			<tronco>Irregular con bifurcaciones</tronco>
+			<ramaje>Tortuoso</ramaje>
+		</estructura>
+		<color_primavera>Haz verde oscuro, enves verde plateado</color_primavera>
+		<resistencia_heladas>Hasta -10ºC</resistencia_heladas>
+	</arbol>
+	
+	<arbol id="3" nombre="Platanus orientalis">
+		<nombre_comun>Platano</nombre_comun>
+		<vegetacion>Caducifolio</vegetacion>
+		<altura>De 20 a 25 metros</altura>
+		<estructura>
+			<copa>Ovoidal</copa>
+			<tronco>Recto</tronco>
+			<ramaje>Expandido</ramaje>
+		</estructura>
+		<color_primavera>Haz verde medio, enves verde claro</color_primavera>
+		<color_otoño>Ocre</color_otoño>
+		<resistencia_heladas>Hasta -20ºC</resistencia_heladas>
+	</arbol>
+	
+	<arbol id="4" nombre="Quercus ilex">
+		<nombre_comun>Encina</nombre_comun>
+		<vegetacion>Perenne</vegetacion>
+		<altura>En torno a 25 metros</altura>
+		<estructura>
+			<copa>Esférica o eliptica irregular</copa>
+			<tronco>Recto</tronco>
+			<ramaje>Tortuoso</ramaje>
+		</estructura>
+		<color_primavera>Plateado en hojas jovenes. En hojas antiguas, haz verde oscuro, enves plateado</color_primavera>
+		<resistencia_heladas>Hasta -15ºC</resistencia_heladas>
+	</arbol>
+</registro_arboles>

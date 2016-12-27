@@ -1,0 +1,63 @@
+{
+  "registro_arboles": {
+    "arbol": [
+      {
+        "-id": "1",
+        "-nombre": "Acer monspessulanum",
+        "nombre_comun": "Arce de Montpellier, Arce menor",
+        "vegetacion": "Caducifolio",
+        "altura": "De 6 a 10 metros",
+        "estructura": {
+          "copa": "Esférica",
+          "tronco": "Recto con bifurcaciones",
+          "ramaje": "Colgante"
+        },
+        "color_primavera": "Verde brillante, enves verde blanquecino",
+        "resistencia_heladas": "Hasta -15ºC"
+      },
+      {
+        "-id": "2",
+        "-nombre": "Ola europea",
+        "nombre_comun": "Olivo",
+        "vegetacion": "Perenne",
+        "altura": "De 8 a 15 metros",
+        "estructura": {
+          "copa": "Irregular",
+          "tronco": "Irregular con bifurcaciones",
+          "ramaje": "Tortuoso"
+        },
+        "color_primavera": "Haz verde oscuro, enves verde plateado",
+        "resistencia_heladas": "Hasta -10ºC"
+      },
+      {
+        "-id": "3",
+        "-nombre": "Platanus orientalis",
+        "nombre_comun": "Platano",
+        "vegetacion": "Caducifolio",
+        "altura": "De 20 a 25 metros",
+        "estructura": {
+          "copa": "Ovoidal",
+          "tronco": "Recto",
+          "ramaje": "Expandido"
+        },
+        "color_primavera": "Haz verde medio, enves verde claro",
+        "color_otoño": "Ocre",
+        "resistencia_heladas": "Hasta -20ºC"
+      },
+      {
+        "-id": "4",
+        "-nombre": "Quercus ilex",
+        "nombre_comun": "Encina",
+        "vegetacion": "Perenne",
+        "altura": "En torno a 25 metros",
+        "estructura": {
+          "copa": "Esférica o eliptica irregular",
+          "tronco": "Recto",
+          "ramaje": "Tortuoso"
+        },
+        "color_primavera": "Plateado en hojas jovenes. En hojas antiguas, haz verde oscuro, enves plateado",
+        "resistencia_heladas": "Hasta -15ºC"
+      }
+    ]
+  }
+}

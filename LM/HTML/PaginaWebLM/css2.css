@@ -1,0 +1,194 @@
+/*Elementos presentes en todas las páginas*/
+#logo{
+	background-color: rgb(0, 93, 255);
+	font-size: 100px;
+	text-align: center;
+	color: white;
+}
+
+#navegador{
+	background-color: rgb(0, 93, 255);
+	text-align: center;
+}
+
+#pie-pagina{
+	background-color: rgb(0, 93, 255);
+	font-size: 30px;
+	color: white;
+	padding: 10px;
+}
+
+
+/*Imagenes de las banderitas y sus links*/
+#banderita-espanol{
+	float: right;
+	padding: 2px;
+}
+
+#banderita-ingles{
+	float: right;
+	padding: 2px;
+}
+
+#linkbanderita-espanol{
+	float: right;
+}
+
+#linkbanderita-ingles{
+	float: right;
+}
+
+
+/*Apartado de Formulario*/
+#formulario{
+	text-align: center;
+}
+
+
+/*Apartado de Condiciones de Uso*/
+#licencia{
+	font-size: 30px;
+}
+
+#licencialink{
+	font-size: 30px;
+}
+
+#seguridadlink{
+	font-size: 30px;
+}
+
+#calidadlink{
+	font-size: 30px;
+}
+
+#info{
+	font-size: 30px;
+}
+
+
+
+/*Ajustar el tamaño de los iconos de las redes sociales*/
+#twitter{
+	width: 3%;
+	transition: 0.8s;
+}
+
+#facebook{
+	width: 3%;
+	transition: 0.8s;
+}
+
+
+/*Animación para las imagenes de las redes sociales*/
+#twitter:hover{
+	background-color: rgb(64,153,255);
+}
+
+#facebook:hover{
+	background-color: rgb(59,89,152);
+}
+
+
+/*Mensaje del Inicio y su animación*/
+#mensaje-inicio{
+	background-color: #00838F;
+	font-size: 200%;
+	text-align: center;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	border-radius: 20px;
+	box-shadow: 7px 7px 8px #888888;
+	color: white;
+	transition: 2s;
+}
+
+#mensaje-inicio:hover{
+	border-radius: 50px;
+}
+
+
+/*Ajustes de tamaño en la tabla del navegador*/
+td{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+tr{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/*Ajustar lugar de cada opcion del navegador y modificación de los atributos de los links*/
+#home{
+	width: 50px;
+	padding: 10px;
+	transition: 1s;
+}
+
+#linkproductos, #linkproductos:visited, #linkproductos:active{
+	text-decoration:none;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	transition: 1s;
+}
+
+#linkregistros, #linkregistros:visited, #linkregistros:active{
+	text-decoration:none;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	transition: 1s;
+}
+
+#linkcondiciones, #linkcondiciones:visited, #linkcondiciones:active{
+	text-decoration:none;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	transition: 1s;
+}
+
+#linkcontactos, #linkcontactos:visited, #linkcontactos:active{
+	text-decoration:none;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	transition: 1s;
+}
+
+
+/*Animaciones cuando se posa el ratón encima de una opcion del navegador*/
+#home:hover{
+	background-color: rgba(0, 228, 255, 0.3);
+	border-radius: 35px;
+}
+
+#linkproductos:hover{
+	background-color: rgba(0, 228, 255, 0.3);
+	border-radius: 35px;
+}
+
+#linkregistros:hover{
+	background-color: rgba(0, 228, 255, 0.3);
+	border-radius: 35px;
+}
+
+#linkcondiciones:hover{
+	background-color: rgba(0, 228, 255, 0.3);
+	border-radius: 35px;
+}
+
+#linkcontactos:hover{
+	background-color: rgba(0, 228, 255, 0.3);
+	border-radius: 35px;
+}
+
+
+/*Ajustar en sitio para las fotos de los productos*/
+#peluche, #foto-peluche{
+	padding-left: 25%;
+	padding-right: 25%;
+}

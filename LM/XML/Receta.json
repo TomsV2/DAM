@@ -1,0 +1,31 @@
+{
+  "receta": {
+    "tipo": "Normal",
+    "medico": {
+      "-Num_Colegiado": "8905674",
+      "#text": "Eustaquio"
+    },
+    "fecha": "11/12/13",
+    "medicamento": {
+      "nombre": "Aspirina",
+      "marca": "Cualquiera",
+      "presentacion": "Sobres"
+    },
+    "conjunto_alternativo": {
+      "alternativo": [
+        {
+          "-pref": "1",
+          "#text": "Paracetamol"
+        },
+        {
+          "-pref": "2",
+          "#text": "Dalsy"
+        },
+        {
+          "-pref": "3",
+          "#text": "Ibuprofeno"
+        }
+      ]
+    }
+  }
+}

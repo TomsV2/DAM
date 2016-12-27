@@ -1,0 +1,11 @@
+GENERALIZACIONES:
+
+TOTAL Y SOLAPADA: englobarlo en una sola tabla todo
+
+PARCIAL Y SOLAPADA: una tabla para el supertipo y otra para todos los subtipos
+
+PARCIAL Y EXCLUSIVA: una tabla para el supertipo y otra para cada subtipo.
+		     (La PK de los subtipos serán la PK del supertipo, se traen mediante FK)
+
+TOTAL Y EXCLUSIVA: una tabla para el supertipo+subtipo1 y otra para el supertipo+subtipo2.
+		   Los atributos del supertipo y el AD(el atributo tipo del triangulito de la generalización) se repiten en todas las tablas.

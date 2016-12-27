@@ -1,0 +1,110 @@
+{
+  "factura": {
+    "-numero": "999",
+    "fecha": "12-1-2005",
+    "numero_pedido": "731",
+    "forma_pago": "Efectivo",
+    "informacion": {
+      "empresa": "Equipos Digitales S.L.",
+      "direccion": "Av. Valladolid",
+      "localizacion": {
+        "-codigo_postal": "28015",
+        "#text": "Madrid"
+      },
+      "c_i_f": "Q-9876543",
+      "tlf": "917776688",
+      "fax": "917776699"
+    },
+    "datos_cliente": {
+      "num_cliente": "879",
+      "nombre": "Aitor Menta",
+      "direccion_envio": {
+        "-num_calle": "7",
+        "-num_piso": "4ºD",
+        "#text": "Av. Oporto"
+      },
+      "poblacion": {
+        "-codigo_postal": "28043",
+        "#text": "Madrid"
+      },
+      "provincia": "Madrid"
+    },
+    "datos_factura": {
+      "producto": [
+        {
+          "-num": "1",
+          "ref": "MII93000F/8",
+          "descripcion": "MICRO PENTIUM IV 3000MHZ FB800",
+          "cantidad": "1",
+          "precio": {
+            "-tipo_moneda": "euro",
+            "#text": "230"
+          },
+          "iva": "16",
+          "importe": {
+            "-tipo_moneda": "euro",
+            "#text": "266,80"
+          }
+        },
+        {
+          "-num": "2",
+          "ref": "MB8QDIP4",
+          "descripcion": "PLACA BASE QDI P4",
+          "cantidad": "1",
+          "precio": {
+            "-tipo_moneda": "euro",
+            "#text": "180"
+          },
+          "iva": "16",
+          "importe": {
+            "-tipo_moneda": "euro",
+            "#text": "208,80"
+          }
+        },
+        {
+          "-num": "3",
+          "ref": "MEDD512M32",
+          "descripcion": "DIMM DDR 512MB 3200",
+          "cantidad": "2",
+          "precio": {
+            "-tipo_moneda": "euro",
+            "#text": "40"
+          },
+          "iva": "16",
+          "importe": {
+            "-tipo_moneda": "euro",
+            "#text": "92,80"
+          }
+        },
+        {
+          "-num": "4",
+          "ref": "HD250GSA7",
+          "descripcion": "DISCO DURO 250GB S-ATA 7200",
+          "cantidad": "4",
+          "precio": {
+            "-tipo_moneda": "euro",
+            "#text": "120"
+          },
+          "iva": "16",
+          "importe": {
+            "-tipo_moneda": "euro",
+            "#text": "556,80"
+          }
+        }
+      ],
+      "base_imponible": {
+        "-tipo_moneda": "euro",
+        "#text": "970"
+      },
+      "porcentaje_iva": "16",
+      "cuota_iva": {
+        "-tipo_moneda": "euro",
+        "#text": "155,20"
+      },
+      "total_factura": {
+        "-tipo_moneda": "euro",
+        "#text": "1125,20"
+      }
+    }
+  }
+}

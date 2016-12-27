@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mensaje>
+	<remite>
+		<nombre>Alfredo Reino</nombre>
+		<email>alf@ibium.com</email>
+	</remite>
+
+	<destinatario>
+		<nombre>Bill Clinton</nombre>
+		<email>president@whitehouse.gov</email>
+	</destinatario>
+
+	<asunto>Hola Bill</asunto>
+
+	<texto>
+		<saludo>Buenos dias presidente</saludo>
+		<cuerpo>Hoy hace un dia muy bonito, ¿te apetece salir a dar un paseo?</cuerpo>
+		<despedida>Un cordial saludo de un completo desconocido</despedida>
+	</texto>
+</mensaje>

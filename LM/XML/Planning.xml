@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<semana>
+	<lunes>
+		<tarea orden="1">Ir a clase</tarea>
+		<tarea orden="2">Estudiar Lenguaje de Marcas</tarea>
+	</lunes>
+
+	<martes>
+		<tarea orden="1">Ir a clase</tarea>
+		<tarea orden="2">Estudiar Programacion</tarea>
+	</martes>
+
+	<miercoles>
+		<tarea orden="1">Ir a clase</tarea>
+		<tarea orden="2">Estudiar Base de Datos</tarea>
+	</miercoles>
+	
+	<jueves>
+		<tarea orden="1">Ir a clase</tarea>
+		<tarea orden="2">Estudiar Sistemas</tarea>
+	</jueves>
+
+	<viernes>
+		<tarea orden="1">Ir a clase</tarea>
+		<tarea orden="2">Estudiar Entorno</tarea>
+		<tarea orden="3">Salir con mis amigos</tarea>
+	</viernes>
+
+	<sabado>
+		<tarea>Disfrutar de la libertad</tarea>
+	</sabado>
+
+	<domingo>
+		<tarea>Disfrutar de la libertad</tarea>
+	</domingo>	
+</semana>

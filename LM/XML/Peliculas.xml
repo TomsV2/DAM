@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directorio_peliculas>
+	<pelicula num_pelicula="1">
+		<nombre>Kokoro ga Sakebitagatterunda</nombre>
+		<year>2015</year>
+		<director>Tatsuyuki Nagai</director>
+		<tipo>Animacion</tipo>
+	</pelicula>
+
+	<pelicula num_pelicula="2">
+		<nombre>Gintama Yorozuya yo Eien Nare</nombre>
+		<year>2013</year>
+		<director>Yoichi Fujita</director>
+		<tipo>Animacion</tipo>
+	</pelicula>
+
+	<pelicula num_pelicula="3">
+		<nombre>Hoshi wo Ou Kodomo</nombre>
+		<year>2011</year>
+		<director>Makoto Shinkai</director>
+		<tipo>Animacion</tipo>
+	</pelicula>	
+</directorio_peliculas>

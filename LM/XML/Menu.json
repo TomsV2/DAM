@@ -1,0 +1,36 @@
+{
+  "menu": {
+    "producto": [
+      {
+        "-nombre": "Gofres Belgas",
+        "calorias": "650",
+        "descripcion": "Dos de nuestros famosos Gofres Belgas con abundante sirope",
+        "euros": "5.95"
+      },
+      {
+        "-nombre": "Gofres Belgas con fresas",
+        "calorias": "900",
+        "descripcion": "Ligeros Gofres Belgas cubiertos de fresas y nata montada",
+        "euros": "7.95"
+      },
+      {
+        "-nombre": "Gofres Belgas con frutas del Bosque",
+        "calorias": "900",
+        "descripcion": "Ligeros Gofres Belgas cubiertos con frutas del bosque y nata montada",
+        "euros": "8.95"
+      },
+      {
+        "-nombre": "Tostada Francesa",
+        "calorias": "600",
+        "descripcion": "Dos gruesas rebanadas de nuestro pan francés casero",
+        "euros": "4.50"
+      },
+      {
+        "-nombre": "Desayuno de la casa",
+        "calorias": "950",
+        "descripcion": "Dos huevos, bacon o salchicha, tostada y patatas fritas",
+        "euros": "6.95"
+      }
+    ]
+  }
+}
