@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="menu">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="PrimerPlato" type="xs:string"/>
+      <xs:element name="SegundoPlato" type="xs:string"/>
+      <xs:element name="Postre" type="xs:string"/>
+      <xs:element name="Bebida" type="xs:string"/>
+	  <xs:element name="Categoria" type="xs:string"/>
+	  <xs:element name="Precio" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

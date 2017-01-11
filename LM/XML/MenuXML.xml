@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menu>
+  <PrimerPlato>Locos caseros</PrimerPlato>
+  <SegundoPlato>Solomicho al Whisky</SegundoPlato>
+  <Postre>Arroz con leche</Postre>
+  <Bebida>Refresco</Bebida>
+  <Categoria>Carne</Categoria>
+  <Precio>20,00</Precio>
+</Menu>
