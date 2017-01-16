@@ -120,7 +120,7 @@ CREATE TABLE titles
 
    title          varchar(80)       NOT NULL,
 
-   type           char(12)          NOT NULL
+   type           char(14)          NOT NULL
 
          DEFAULT ('UNDECIDED'),
 
