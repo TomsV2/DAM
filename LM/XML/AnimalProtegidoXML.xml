@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<animalProtegido>
+
+	<nombreComun>Inseparable</nombreComun>
+	<nombreCientifico>Agapornis</nombreCientifico>
+	<poblacionDetectada>76748</poblacionDetectada>
+	<hembrasFertiles>35589</hembrasFertiles>
+	<alimentacion>Pan</alimentacion>
+	<mesInicioEpocaCria>Abril</mesInicioEpocaCria>
+	<edadAdulta>2</edadAdulta>
+	
+</animalProtegido>
