@@ -12,5 +12,12 @@ SELECT FirstName, LastName, PersonType FROM Person.Person WHERE LastName like '%
 --4. LoginID, nationalIDNumber, edad y puesto de trabajo (jobTitle) de los empleados (tabla Employees) de sexo femenino que tengan más de cinco años de antigüedad.
 SELECT * FROM HumanResources.Employee
 
-SELECT LoginID, NationalIDNumber, ((YEAR(CURRENT_TIMESTAMP-CAST(BirthDate AS DATETIME))-1900)) AS Edad, JobTitle FROM HumanResources.Employee
+SELECT LoginID, NationalIDNumber, ((YEAR(CURRENT_TIMESTAMP-CAST(BirthDate AS DATETIME))-1900)) AS Edad, ((YEAR(CURRENT_TIMESTAMP-CAST(HireDate AS DATETIME))-1900)) AS Antigüedad, JobTitle, Gender
+	FROM HumanResources.Employee 
+	WHERE Gender = 'F' AND ((YEAR(CURRENT_TIMESTAMP-CAST(HireDate AS DATETIME))-1900)) > 5
 
+--5. Ciudades correspondientes a los estados 11, 14, 35 o 70, sin repetir. Usar la tabla Person.Address.
+SELECT Distinct City, StateProvinceID
+	FROM Person.Address
+	WHERE StateProvinceID IN ('11', '14', '35', '70')
+	ORDER BY StateProvinceID DESC, City DESC
