@@ -18,7 +18,7 @@ public class TestPunto {
 		System.out.println("Las coordenadas son: " + "(" + punto1.getX() + "," + punto1.getY() + ")" );
 		System.out.println(" ");
 		
-		System.out.println("El punto origen es: " +punto1.getOrigen()); //********PREGUNTAR********//
+		//System.out.println("El punto origen es: " +punto1.getOrigen()); //********PREGUNTAR********//
 	}
 }
 

@@ -1,0 +1,14 @@
+public class TestClasePersona {
+	
+	public static void main (String args[]) {
+		
+		ClasePersona persona1 = new ClasePersona();
+		
+		System.out.println("Hola soy un get nombre por defecto: " +persona1.getNombre());
+		System.out.println("Hola soy un get DNI por defecto: " +persona1.getDNI());
+		System.out.println("Hola soy un get nombre por defecto: " +persona1.getNombre());
+		System.out.println("Hola soy un get nombre por defecto: " +persona1.getNombre());
+		System.out.println("Hola soy un get nombre por defecto: " +persona1.getNombre());
+	}
+}
+

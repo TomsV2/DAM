@@ -1,15 +1,9 @@
-/*
- *
- * 
- */
-
-
 public class Punto {
 	
 	private double x;
 	private double y;
 	
-	private static Punto origen = new Punto(); //*********PREGUNTAR**********//
+	/*private static Punto origen = new Punto(); //*********PREGUNTAR**********/
 	
 	//Constructor del valor por defecto
 	public Punto (){
@@ -30,9 +24,10 @@ public class Punto {
 	public double getY(){
 		return y;	
 	}
-	public Punto getOrigen(){
+	
+	/*public Punto getOrigen(){
 		return origen;
-	}
+	}*/
 	
 	//SET
 	public void setX (double nx){
