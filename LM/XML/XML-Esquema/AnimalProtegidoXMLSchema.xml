@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="typeAnimalProtegido">
+		<xs:sequence>
+			<xs:element name="nombreComun" type="xs:string"/>
+			<xs:element name="nombreCientifico" type="xs:string"/>
+			<xs:element name="poblacionDetectada" type="xs:int"/>
+			<xs:element name="hembrasFertiles" type="xs:int"/>
+			<xs:element name="alimentacion" type="xs:string"/>
+			
+			<xs:element name="mesInicioEpocaCria">
+			
+				<xs:simpleType>
+					 <xs:restriction base="xs:string">
+					 
+					 	<xs:enumeration value="Enero"/>
+						<xs:enumeration value="Febrero"/>
+						<xs:enumeration value="Marzo"/>
+						<xs:enumeration value="Abril"/>
+						<xs:enumeration value="Mayo"/>
+						<xs:enumeration value="Junio"/>
+						<xs:enumeration value="Julio"/>
+						<xs:enumeration value="Agosto"/>
+						<xs:enumeration value="Septiembre"/>
+						<xs:enumeration value="Octubre"/>
+						<xs:enumeration value="Noviembre"/>
+						<xs:enumeration value="Diciembre"/>
+						
+					</xs:restriction>
+				</xs:simpleType>
+				
+			</xs:element>
+				
+			<xs:element name="edadAdulta" type="xs:int"/>
+			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="animalProtegido" type="typeAnimalProtegido">
+	</xs:element>
+
+</xs:schema>

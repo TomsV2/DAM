@@ -11,7 +11,7 @@
 			<xs:element name="nivelRequerido" type="xs:string"/>
 			<xs:element name="precio" type="xs:decimal"/>
 			<xs:element name="sesionesSemanales" type="xs:decimal"/>
-			<xs:element name="duracionSesion" type="xs:"/>
+			<xs:element name="duracionSesion" type="xs:time"/>
 		</xs:sequence>
 	</xs:complexType>
 	
