@@ -1,0 +1,171 @@
+/*
+ *Clase Rombo
+ * 
+ * Propiedades relevantes:
+ * 
+ * Diagonal1 -> Double consultable y modificable
+ * Diagonal2 -> Double consultable y modificable
+ * 
+ * Propiedades derivadas:
+ * 
+ * Perímetro -> Double consultable
+ * Area -> Double consultable
+ * Lado -> Double consultable
+ * 
+ * Gets y sets:
+ * 
+ * Double getDiagonal1();
+ * void setDiagonal1(double diagonal1);
+ * 
+ * Double getDiagonal2();
+ * void setDiagonal2(double diagonal2);
+ * 
+ * double getPerimetro();
+ * double getArea();
+ * double getLado();
+ * 
+ * Restricciones:
+ * 
+ * Ambas diagonales deben ser mayor que 0
+ * 
+ * Métodos añadidos:
+ * 
+ * No hay
+ * 
+ * 
+ * 
+ */
+import java.lang.*;
+import java.util.*;
+
+public class Rombo implements Cloneable, Comparable <Rombo> {
+	
+	private double diagonal1;
+	private double diagonal2;
+	//consultores 
+	public double getDiagonal1()//constructores arriba
+	{
+		return diagonal1;
+	}
+	public void setDiagonal1(double diagonal1)
+	{
+		this.diagonal1=diagonal1;
+	}
+	public double getDiagonal2()
+	{
+		return diagonal2;
+	}
+	public void setDiagonal2(double diagonal2)
+	{
+		this.diagonal2=diagonal2;
+	}
+	public double getLado()
+	{
+		double lado=Math.sqrt(Math.pow(diagonal1,2.0)+Math.pow(diagonal2,2.0));
+		return lado;
+	}
+	public double getPerimetro ()
+	{
+		double perimetro=4*getLado();
+		return perimetro;
+	}
+	public double getArea()
+	{
+		double area=(diagonal1*diagonal2)/2.0;
+		return area;
+	}
+	
+	
+	//constructores
+	//vacio
+	public Rombo()
+	{
+		diagonal1=1.0;
+		diagonal2=1.0;
+	}
+	//de copia
+	public Rombo(Rombo rombo)
+	{
+		this.diagonal1=rombo.diagonal1;
+		this.diagonal2=rombo.diagonal2;
+
+	}
+	public Rombo(double diagonal1, double diagonal2)throws ExcepcionRombo
+	{
+		
+			if(diagonal1>0)
+			{
+				this.diagonal1=diagonal1;
+			}
+			else
+			{
+				ExcepcionRombo ExcepcionDiagonal1= new ExcepcionRombo ("La primera diagonal no es valida, debe ser mayor que 0");
+			}
+			if(diagonal2>0)
+			{
+				this.diagonal2=diagonal2;
+			}
+			else
+			{
+				ExcepcionRombo ExcepcionDiagonal2= new ExcepcionRombo ("La segunda diagonal no es valida, debe ser mayor que 0");
+			}
+			if(diagonal1==diagonal2)
+			{
+				ExcepcionRombo ExcepcionCuadrado= new ExcepcionRombo ("Es un cuadrado, no un rombo");
+			}
+	}
+	//métodos sobreescritos y sobrecargados
+	@Override
+	public String toString()
+	{
+		String s=("Diagonal 1: "+getDiagonal1()+", Diagonal 2: "+getDiagonal2());
+		return s;
+	}
+	@Override
+	public int hashCode()
+	{
+		return((int)(getDiagonal1()*getDiagonal2()*11311)/3);
+	}
+	@Override
+	//Criterio de igualdad: Dos objetos serán iguales si tienen el mismo lado
+	public boolean equals(Object x)
+	{
+		boolean igual=false;
+		if (x!=null && x instanceof Rombo)
+		{
+			Rombo rombo=(Rombo) x;
+			if(getLado()==rombo.getLado())
+			{
+				igual=true;
+			}
+		}
+		return igual;
+	}
+	//Orden natural: Será mayor el rombo que mayor lado tenga
+	public int compareTo(Rombo rombo)
+	{
+		int compara=0;
+		if(this.getLado()>rombo.getLado())
+		{
+			compara=1;
+		}
+			else if(this.getLado() < rombo.getLado())
+		{
+			compara=-1;	
+		}
+		return compara;
+	}
+	@Override
+	public Rombo clone()
+	{
+		Rombo copia=null;
+		try
+		{
+			copia=(Rombo)super.clone();
+		}catch(CloneNotSupportedException error)
+		{
+			System.out.println("No se ha podido clonar");
+		}
+		return copia;
+	}
+}
