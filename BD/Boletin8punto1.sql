@@ -20,3 +20,11 @@ SELECT * FROM Orders
 SELECT CustomerID, COUNT(OrderID) AS NumeroPedidos
 	FROM Orders
 	GROUP BY CustomerID
+
+--4. ID del cliente, año y número de pedidos que nos ha hecho cada año.
+SELECT * FROM Orders
+
+SELECT CustomerID, COUNT(CustomerID) AS NumeroPedidos, YEAR(OrderDate) AS [Año de pedido]
+	FROM Orders
+	GROUP BY CustomerID, OrderDate
+	ORDER BY CustomerID
