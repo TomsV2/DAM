@@ -21,9 +21,11 @@ public class TestRombo {
 			System.out.println(mensaje);
 		}
 		System.out.println("Diagonal 1: "+rombo1.getDiagonal1());
+		
 		rombo1.setDiagonal1(2.0);
 		System.out.println("Nueva Diagonal 1: "+rombo1.getDiagonal1());
 		System.out.println("Diagonal 2: "+rombo1.getDiagonal2());
+		
 		rombo1.setDiagonal2(5.0);
 		System.out.println("Nueva Diagonal 2: "+rombo1.getDiagonal2());
 		System.out.println("Lado: "+rombo1.getLado());
