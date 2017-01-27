@@ -111,5 +111,13 @@ public class ClasePersona {
 	public void setAltura (double nAltura){
 		altura = nAltura;
 	}
+	
+	//Métodos sobrescritos
+	
+	@Override
+	public String toString(){
+		String s = "Nombre: " +getNombre() + "\nEdad: " +getEdad() + "\nDNI: " +getDNI() + "\nSexo: " +getSexo() + "\nPeso: " +getPeso() + "\nAltura: " +getAltura() + "\nValor del  IMC: " +getValorIMC() + " y el tipo: " +getTipoIMC();
+		return s;
+	}
 }
 

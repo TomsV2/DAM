@@ -34,6 +34,17 @@ public class TestClasePersona {
 		System.out.println("Nueva altura: " +persona1.getAltura());
 		
 		System.out.println("El nuevo IMC es " +persona1.getValorIMC() +" y su tipo es " +persona1.getTipoIMC());
+		
+		ClasePersona persona2 = new ClasePersona();
+		
+		System.out.println(" ");
+		persona2.setNombre("Sefran");
+		persona2.setEdad(24);
+		persona2.setDNI("77777777S");
+		persona2.setSexo('M');
+		persona2.setPeso(70);
+		persona2.setAltura(1.87);
+		System.out.println(persona2.toString());
 	}
 }
 
