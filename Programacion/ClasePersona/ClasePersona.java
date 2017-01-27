@@ -114,7 +114,13 @@ public class ClasePersona {
 	
 	//Métodos sobrescritos
 	
-	@Override
+	@Override //toString para "por defecto"
+	public String toStringV(){
+		String sV = "Nombre: Sr Mieo" + "\nEdad: 0" + "\nDNI: 00000000A" + "\nSexo: X" + "\nPeso: 00.00" + "\nAltura: 00.00" + "\nValor del  IMC: " +getValorIMC() + " y el tipo: " +getTipoIMC();
+		return sV;
+	}
+	
+	@Override //toString para datos
 	public String toString(){
 		String s = "Nombre: " +getNombre() + "\nEdad: " +getEdad() + "\nDNI: " +getDNI() + "\nSexo: " +getSexo() + "\nPeso: " +getPeso() + "\nAltura: " +getAltura() + "\nValor del  IMC: " +getValorIMC() + " y el tipo: " +getTipoIMC();
 		return s;
