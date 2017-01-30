@@ -4,16 +4,17 @@ public class TestClasePersona {
 		
 		ClasePersona persona1 = new ClasePersona();
 		
-		System.out.println("Nombre por defecto: " +persona1.getNombre());
+		/*System.out.println("Nombre por defecto: " +persona1.getNombre());
 		System.out.println("Edad por defecto: " +persona1.getEdad());
 		System.out.println("DNI por defecto: " +persona1.getDNI());
 		System.out.println("Sexo por defecto: " +persona1.getSexo());
 		System.out.println("Peso por defecto: " +persona1.getPeso());
 		System.out.println("Altura por defecto: " +persona1.getAltura());
 		System.out.println("IMC por defecto: " +persona1.getValorIMC());
+		System.out.println(" ");*/
+		
+		System.out.println(persona1.toString());
 		System.out.println(" ");
-		
-		
 		
 		persona1.setNombre("Tomas Mateo");
 		System.out.println("Nuevo nombre: " +persona1.getNombre());
@@ -35,16 +36,16 @@ public class TestClasePersona {
 		
 		System.out.println("El nuevo IMC es " +persona1.getValorIMC() +" y su tipo es " +persona1.getTipoIMC());
 		
-		ClasePersona persona2 = new ClasePersona();
+		ClasePersona Sefran = new ClasePersona();
 		
 		System.out.println(" ");
-		persona2.setNombre("Sefran");
-		persona2.setEdad(24);
-		persona2.setDNI("77777777S");
-		persona2.setSexo('M');
-		persona2.setPeso(70);
-		persona2.setAltura(1.87);
-		System.out.println(persona2.toString());
+		Sefran.setNombre("Sefran");
+		Sefran.setEdad(24);
+		Sefran.setDNI("77777777S");
+		Sefran.setSexo('M');
+		Sefran.setPeso(70);
+		Sefran.setAltura(1.87);
+		System.out.println(Sefran.toString());
 	}
 }
 
