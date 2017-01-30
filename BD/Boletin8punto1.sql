@@ -24,7 +24,14 @@ SELECT CustomerID, COUNT(OrderID) AS NumeroPedidos
 --4. ID del cliente, año y número de pedidos que nos ha hecho cada año.
 SELECT * FROM Orders
 
-SELECT CustomerID, COUNT(CustomerID) AS NumeroPedidos, YEAR(OrderDate) AS [Año de pedido]
+SELECT CustomerID, COUNT (CustomerID) AS [Número de pedidos], YEAR(OrderDate) AS [Año de pedido]
 	FROM Orders
-	GROUP BY CustomerID, OrderDate
+	GROUP BY CustomerID, YEAR(OrderDate)
 	ORDER BY CustomerID
+
+--5. ID del producto, precio unitario y total facturado de ese producto, ordenado por cantidad facturada de mayor a menor. Si hay varios precios unitarios para el mismo producto tomaremos el mayor.
+SELECT * FROM [Order Details]
+
+SELECT DISTINCT ProductID, MAX (UnitPrice) [mÁXIMO PRECIO UNITARIO], (Quantity * UnitPrice) AS [Total facturado]
+	FROM [Order Details]
+	ORDER BY (Quantity * UnitPrice) DESC
