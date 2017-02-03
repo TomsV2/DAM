@@ -32,9 +32,9 @@ public class ClaseCerrojo {
 	
 	public boolean compararCombinacion (String intentoCombinacion){
 		
-		boolean compararCombinacion = true;
+		boolean compararCombinacion = false;
 		
-		if(intentoCombinacion == combinacion){
+		if(intentoCombinacion.equals(combinacion)){
 			
 			System.out.println("Ha acertado la contraseña");
 			compararCombinacion = true;

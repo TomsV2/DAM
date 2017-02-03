@@ -20,7 +20,7 @@ public class Cerrojo {
 			System.out.print("Introduzca la contrasenia correcta: ");
 			intentoCombinacion = teclado.nextLine();
 			
-		}while (cerrojo.compararCombinacion(intentoCombinacion));
+		}while (cerrojo.compararCombinacion(intentoCombinacion) == false);
 		
 		
 		
