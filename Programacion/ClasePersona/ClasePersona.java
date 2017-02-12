@@ -56,36 +56,6 @@ public class ClasePersona {
 		return altura;
 	}
 	
-	public double getValorIMC(){
-		
-		double imc = peso / (altura*altura);
-		
-		return imc;
-		//return peso / (altura*altura);
-	}
-	
-	public int getTipoIMC(){
-		
-		int tipoIMC = 0;
-		double imc = peso / (altura*altura);
-		
-		if (imc < 18.50){
-			
-			tipoIMC = -1;
-			
-			if (imc >= 25.00){
-				
-				tipoIMC = 1;
-				
-				if (imc>18.50 && imc<24.99){
-					
-					tipoIMC = 0;
-				}
-			}
-		}
-		
-		return tipoIMC;
-	}
 	
 	//SETS
 	public void setNombre (String nNombre){
@@ -112,11 +82,43 @@ public class ClasePersona {
 		altura = nAltura;
 	}
 	
+	//Métodos
+	public double valorIMC(){
+		
+		double valorIMC = peso / (altura*altura);
+		
+		return valorIMC;
+		//return peso / (altura*altura);
+	}
+	
+	public int tipoIMC(){
+		
+		int tipoIMC = 0;
+		double imc = peso / (altura*altura);
+		
+		if (imc < 18.50){
+			
+			tipoIMC = -1;
+			
+			if (imc >= 25.00){
+				
+				tipoIMC = 1;
+				
+				if (imc>18.50 && imc<24.99){
+					
+					tipoIMC = 0;
+				}
+			}
+		}
+		
+		return tipoIMC;
+	}
+	
 	//Métodos sobrescritos
 	
 	@Override //toString para datos
 	public String toString(){
-		String s = "Nombre: " +getNombre() + "\nEdad: " +getEdad() + "\nDNI: " +getDNI() + "\nSexo: " +getSexo() + "\nPeso: " +getPeso() + "\nAltura: " +getAltura() + "\nValor del  IMC: " +getValorIMC() + " y el tipo: " +getTipoIMC();
+		String s = "Nombre: " +getNombre() + "\nEdad: " +getEdad() + "\nDNI: " +getDNI() + "\nSexo: " +getSexo() + "\nPeso: " +getPeso() + "\nAltura: " +getAltura() + "\nValor del  IMC: " +valorIMC() + " y el tipo: " +tipoIMC();
 		return s;
 	}
 }
