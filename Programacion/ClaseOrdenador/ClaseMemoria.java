@@ -7,11 +7,11 @@ public class ClaseMemoria {
 		private double velocidad;
 		private String tipo = new String();
 		
-		//Constructor vacío
+		//Constructor por defecto
 		public ClaseMemoria(){
 			tamanio = 0;
 			velocidad = 0;
-			tipo = "Vacio";
+			tipo = "PorDefecto";
 		}
 		
 		//Constructor sobrecargado
