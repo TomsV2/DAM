@@ -23,6 +23,10 @@ public class ClaseOrdenador {
 	}
 	
 	//GETS
+	public ClaseMemoria getMemoria(){
+		return Memoria;
+	}
+	
 	public double getPrecioBase(){
 		return precioBase;
 	}
