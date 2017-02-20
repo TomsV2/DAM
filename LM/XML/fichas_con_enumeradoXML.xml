@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<fichas>
+	<ficha categoria="particular">
+		<nombre>Pepe</nombre>
+		<apellido1>El</apellido1>
+		<apellido2>Empujones</apellido2>
+		<direccion_email>PepeElEmpujones@gmail.com</direccion_email>
+		<direccion>
+			<calle>Almeria</calle>
+			<codigo_postal>41710</codigo_postal>
+			<ciudad>Utrera</ciudad>
+			<pais>Espania</pais>
+		</direccion>
+	</ficha>
+</fichas>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:complexType name="tipo_ficha">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string"/>
+			<xs:element name="apellido1" type="xs:string"/>
+			<xs:element name="apellido2" type="xs:string"/>
+			<xs:element name="direccion_email" type="tipo_email" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="direccion" type="tipo_direccion" minOccurs="0" maxOccurs="3"/>
+		</xs:sequence>
+		<xs:attribute name="categoria" type="tipo_categoria"/>
+		<xs:attribute name="zona" type="tipo_zona" use="optional"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipo_email">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[a-zA-Z0-9]*[@][a-zA-Z0-9]*[.][a-zA-Z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tipo_direccion">
+		<xs:sequence>
+			<xs:element name="calle" type="xs:string"/>
+			<xs:element name="piso" type="xs:string" minOccurs="0"/>
+			<xs:element name="letra" type="xs:string" minOccurs="0"/>
+			<xs:element name="codigo_postal" type="tipo_codigo_postal"/>
+			<xs:element name="ciudad" type="xs:string"/>
+			<xs:element name="pais" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipo_codigo_postal">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="10000"/>
+			<xs:maxInclusive value="99999"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_categoria">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="empresa"/>
+			<xs:enumeration value="particular"/>
+			<xs:enumeration value="agente_comercial"/>		
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_zona">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="centro"/>
+			<xs:enumeration value="macarena"/>
+			<xs:enumeration value="remedios"/>		
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="fichas" type="ficha">
+	</xs:element>
+	
+	<xs:complexType name="ficha">
+		<xs:sequence>
+			<xs:element name="ficha" type="tipo_ficha" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>
