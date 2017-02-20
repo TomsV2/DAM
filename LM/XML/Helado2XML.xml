@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<helado>
+	<sabor>chocolate</sabor>
+	<envase>tarrina</envase>
+	<tamanio>mediano</tamanio>
+</helado>

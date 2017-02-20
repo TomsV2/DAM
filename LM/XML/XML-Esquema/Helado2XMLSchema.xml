@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="tipo_helado">
+		<xs:sequence>
+			<xs:element name="sabor" type="tipo_sabor"/>	
+			<xs:element name="envase" type="tipo_envase"/>
+			<xs:element name="tamanio" type="tipo_tamanio"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipo_sabor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="chocolate"/>
+			<xs:enumeration value="fresa"/>
+			<xs:enumeration value="vainilla"/>
+			<xs:enumeration value="limon"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_tamanio">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="grande"/>
+			<xs:enumeration value="mediano"/>
+			<xs:enumeration value="pequenio"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_envase">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cono"/>
+			<xs:enumeration value="tarrina"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="helado" type="tipo_helado">
+	</xs:element>
+
+</xs:schema>
