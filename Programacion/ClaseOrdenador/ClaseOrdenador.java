@@ -46,5 +46,8 @@ public class ClaseOrdenador {
 	public void setPrecioBase(double nPrecioBase){
 		precioBase = nPrecioBase;
 	}
+	
+	
+	
 }
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ClaseMemoria {
+public class ClaseMemoria implements Cloneable, Comparable <ClaseMemoria> {
 		
 		//Atributos básicos
 		private double tamanio;
@@ -54,5 +54,57 @@ public class ClaseMemoria {
 			String s = "Tamanio de la memoria: " +getTamanio() + "\nVelocidad de la memoria: " +getVelocidad() + "\nTipo de memoria: " +getTipo();
 			return s;
 		}
+		
+		@Override //hashCode
+		public int hashCode(){
+			return ((int) (getTamanio() * getVelocidad() * 918 * 7));
+		}
+		
+		@Override //clone
+		public ClaseMemoria clone(){
+			
+			ClaseMemoria copia = null;
+			
+			try{
+				copia = (ClaseMemoria) super.clone();
+			}
+			
+			catch (CloneNotSupportedException error){
+				System.out.println("Objeto no clonado");
+			}
+			return copia;
+		}
+		
+		@Override //compareTo
+		public int compareTo(ClaseMemoria m){
+			int compara = 0;
+			
+			if(getTamanio() > m.getTamanio()){
+				compara = 1;
+			}
+			else{
+				if(getTamanio() < m.getTamanio()){
+					compara = -1;
+				}
+			}
+			return compara;
+		}
+		
+		@Override //equals
+		public boolean equals(Object o){
+			
+			boolean igual = false;
+			
+			if(o != null && o instanceof ClaseMemoria){
+				
+				ClaseMemoria m = (ClaseMemoria) o;
+				
+				if(tamanio == m.tamanio && velocidad == m.velocidad && tipo == m.tipo){
+					igual = true;
+				}
+			}
+			return igual;
+		}
+		
 }
 
