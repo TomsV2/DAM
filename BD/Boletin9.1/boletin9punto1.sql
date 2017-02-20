@@ -86,4 +86,74 @@ SELECT e.EmployeeID, e.FirstName, e.LastName, MONTH(e.BirthDate) AS [Mes de naci
 SELECT * FROM Products
 SELECT * FROM [Order Details]
 
-SELECT (UnitPrice*Quantity)-(UnitPrice*Quantity*Discount) AS [Total en US$] FROM [Order Details]
+--SELECT (UnitPrice*Quantity)-(UnitPrice*Quantity*Discount) AS [Total en US$] FROM [Order Details]
+
+SELECT ROUND(SUM((od.UnitPrice*Quantity)-(od.UnitPrice*Quantity*Discount)),2) AS [Total en US$], CategoryID
+	FROM [Order Details] AS od
+	INNER JOIN Products AS p
+	ON od.ProductID = p.ProductID
+	GROUP BY CategoryID
+	ORDER BY CategoryID
+
+--8. Total de ventas en US$ de cada empleado cada año (nombre, apellidos, dirección).
+SELECT * FROM Products
+SELECT * FROM [Order Details]
+SELECT * FROM Orders
+SELECT * FROM Employees
+
+--SELECT (UnitPrice*Quantity)-(UnitPrice*Quantity*Discount) AS [Total en US$] FROM [Order Details]
+
+SELECT e.FirstName, e.LastName, e.[Address], YEAR(o.OrderDate) AS [Año], ROUND(SUM((od.UnitPrice*Quantity)-(od.UnitPrice*Quantity*Discount)),2) AS [Total en US$]
+	FROM Employees AS e
+	INNER JOIN Orders AS o
+	ON e.EmployeeID = o.EmployeeID
+	INNER JOIN [Order Details] AS od
+	ON o.OrderID = od.OrderID
+	INNER JOIN Products AS p
+	ON od.ProductID = p.ProductID
+	GROUP BY e.FirstName, e.LastName, e.[Address], YEAR(o.OrderDate)
+	ORDER BY FirstName
+
+--9. Ventas de cada producto en el año 97. Nombre del producto y unidades.
+SELECT * FROM Products
+SELECT * FROM [Order Details]
+SELECT * FROM Orders
+
+SELECT YEAR(OrderDate) AS [Año] FROM Orders
+	WHERE YEAR(OrderDate) = 1997
+
+SELECT ProductName FROM Products
+
+SELECT SUM(Quantity) FROM [Order Details] AS [Cantidad total]
+
+SELECT p.ProductName, SUM(Quantity) AS [Cantidad total de productos], YEAR(OrderDate) AS [Año], ROUND(SUM((od.UnitPrice*Quantity)-(od.UnitPrice*Quantity*Discount)),2) AS [Total en US$]
+	FROM Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	WHERE YEAR(OrderDate) = 1997
+	GROUP BY ProductName, YEAR(OrderDate)
+	ORDER BY ProductName
+
+--10. Cuál es el producto del que hemos vendido más unidades en cada país. *
+SELECT * FROM Orders
+SELECT * FROM [Order Details]
+SELECT * FROM Products
+
+SELECT ProductName, SUM(Quantity) AS [Cantidad total]
+	FROM Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	GROUP BY ProductName
+	ORDER BY ProductName
+
+SELECT ShipCountry, (SELECT ProductName, SUM(Quantity) AS [Cantidad total]
+						FROM Products AS p
+						INNER JOIN [Order Details] AS od
+						ON p.ProductID = od.ProductID
+						GROUP BY ProductName
+						ORDER BY ProductName)
+	FROM Orders
+
+
