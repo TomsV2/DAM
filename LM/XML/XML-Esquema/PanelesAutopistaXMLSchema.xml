@@ -1,14 +1,78 @@
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<xs:complexType name="tipo_paneles">
+	<xs:complexType name="tipo_evento">
 		<xs:sequence>
-			<xs:element name="to" type="xs:string"/>
-			<xs:element name="from" type="xs:string"/>
-			<xs:element name="heading" type="xs:string"/>
-			<xs:element name="body" type="xs:string"/>
+			<xs:element name="via" type="tipo_via"/>
+			<xs:element name="pk" type="tipo_pk"/>
+			<xs:element name="sentido" type="tipo_sentido"/>
+			<xs:element name="retencion" type="xs:string" minOccurs="0"/>
+			<xs:element name="carrilescortados" type="tipo_carrilescortados" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="tipo" type="tipo_tipo"/>
+		<xs:attribute name="fecha" type="xs:dateTime"/>
+	</xs:complexType>
+	
+	<xs:complexType name="tipo_via">
+		<xs:sequence>
+			<xs:element name="nombre" type="tipo_nombre" minOccurs="0"/>
+			<xs:element name="ref" type="tipo_ref" minOccurs="0"/>
+			<xs:element name="origen" type="tipo_OrigenDestino" minOccurs="0"/>
+			<xs:element name="destino" type="tipo_OrigenDestino" minOccurs="0"/>
+			<xs:element name="doble" type="xs:string" minOccurs="0"/>
+			<xs:element name="carriles" type="tipo_carriles" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:simpleType name="tipo_nombre">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value='50'/>
+			<xs:minLength value='0'/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_ref">
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[A-Z]{1,3}[-][0-9]{1,9999}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_OrigenDestino">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_carriles">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_pk">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipo_sentido">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="-1"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tipo_carrilescortados">
+		<xs:attribute name="valor" type="tipo_valor"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipo_valor">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 	<xs:element name="paneles" type="evento">
 	</xs:element>
@@ -18,5 +82,12 @@
 			<xs:element name="evento" type="tipo_evento" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-
+	
+	<xs:simpleType name="tipo_tipo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Accidente"/>
+			<xs:enumeration value="Retención"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 </xs:schema>
