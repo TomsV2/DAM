@@ -38,7 +38,6 @@ SELECT DISTINCT ProductName, COUNT(ShipCountry) AS [Número de paises]
 SELECT * FROM Products
 SELECT * FROM [Order Details]
 SELECT * FROM Orders
-SELECT * FROM Products
 
 SELECT ProductName, Count(e.EmployeeID) AS [Número de empleados]
 	FROM Products AS p
@@ -52,17 +51,111 @@ SELECT ProductName, Count(e.EmployeeID) AS [Número de empleados]
 	GROUP BY ProductName
 
 --5. Empleados que no han vendido nunca “Chartreuse verte” ni “Ravioli Angelo”.
+SELECT * FROM Products
+SELECT * FROM [Order Details]
+SELECT * FROM Orders
 
+SELECT ProductName, Count(e.EmployeeID) AS [Número de empleados]
+	FROM Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	INNER JOIN Employees AS e
+	ON o.EmployeeID = e.EmployeeID
+	GROUP BY ProductName
 
+EXCEPT
+
+SELECT ProductName, Count(e.EmployeeID) AS [Número de empleados]
+	FROM Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	INNER JOIN Employees AS e
+	ON o.EmployeeID = e.EmployeeID
+	WHERE ProductName IN ('Chartreuse verte','Ravioli Angelo')
+	GROUP BY ProductName
 
 --6. Número de unidades de cada categoría de producto que ha vendido cada empleado.
+SELECT * FROM Employees
+SELECT * FROM Orders
+SELECT * FROM [Order Details]
+SELECT * FROM Products
+SELECT * FROM Categories
 
+SELECT SUM(Quantity)AS [Número de Unidades], CategoryName
+	FROM Categories AS ca
+	INNER JOIN Products AS p
+	ON ca.CategoryID = p.CategoryID
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	GROUP BY CategoryName
 
+SELECT SUM(Quantity)AS [Número de Unidades], CategoryName, e.FirstName, e.LastName
+	FROM Categories AS ca
+	INNER JOIN Products AS p
+	ON ca.CategoryID = p.CategoryID
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	INNER JOIN Employees AS e
+	ON o.EmployeeID = e.EmployeeID
+	GROUP BY e.EmployeeID, CategoryName, e.FirstName, e.LastName
+	ORDER BY e.EmployeeID
 
 --7. Total de ventas (US$) de cada categoría en el año 97.
+
+
 --8. Productos que han comprado más de un cliente del mismo país, indicando el nombre del producto, el país y el número de clientes distintos de ese país que lo han comprado.
+SELECT * FROM Customers
+SELECT * FROM Orders
+SELECT * FROM [Order Details]
+SELECT * FROM Products
+
+SELECT distinct ProductName, Country, COUNT(DISTINCT cu.CustomerID)  --Preguntar
+	FROM  Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = od.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	INNER JOIN Customers AS cu
+	ON o.CustomerID = cu.CustomerID
+	GROUP BY ProductName, Country
+	HAVING (COUNT(DISTINCT cu.CustomerID))>1
+	ORDER BY COUNT(DISTINCT cu.CustomerID), Country
+	
+
 --9. Total de ventas (US$) en cada país cada año.
+SELECT * FROM Products
+SELECT * FROM [Order Details]
+SELECT * FROM Orders
+
+SELECT ROUND(SUM((od.UnitPrice*Quantity)-(od.UnitPrice*Quantity*Discount)),2) AS [Total en US$], ShipCountry, YEAR(OrderDate)
+	FROM Products AS p
+		INNER JOIN [Order Details] AS od
+		ON p.ProductID = od.ProductID
+		INNER JOIN Orders AS o
+		ON od.OrderID = o.OrderID
+		GROUP BY YEAR(OrderDate), ShipCountry 
+		ORDER BY ShipCountry
+
+
 --10. Producto superventas de cada año, indicando año, nombre del producto, categoría y cifra total de ventas.
+SELECT * FROM Products
+SELECT * FROM [Order Details]
+SELECT * FROM Orders
+
+SELECT ProductName, MAX(Quantity) AS [Cantidad máxima], YEAR(OrderDate) as [Año]
+	FROM Products AS p
+	INNER JOIN [Order Details] AS od
+	ON p.ProductID = OD.ProductID
+	INNER JOIN Orders AS o
+	ON od.OrderID = o.OrderID
+	GROUP BY ProductName, YEAR(OrderDate)
+
 --11. Cifra de ventas de cada producto en el año 97 y su aumento o disminución respecto al año anterior en US $ y en %.
 --12. Mejor cliente (el que más nos compra) de cada país.
 --13. Número de productos diferentes que nos compra cada cliente.
