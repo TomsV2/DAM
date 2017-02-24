@@ -6,8 +6,7 @@ public class Array {
 		
 		Scanner teclado = new Scanner(System.in);
 		
-		int [] array1 = new int [5];
-		
+		int [] array1 = new int [5];	
 		
 		//~ array1 = new int[5];
 		
