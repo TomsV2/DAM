@@ -203,20 +203,7 @@ SELECT ROUND(SUM((od.UnitPrice*Quantity)-(od.UnitPrice*Quantity*Discount)),2) AS
 	GROUP BY YEAR(OrderDate), ProductName
 
 
---12. Mejor cliente (el que más nos compra) de cada país.              --------------------TERMINAR EL EJERCICIO---------------------
-SELECT * FROM Customers
-SELECT * FROM Orders
-SELECT * FROM [Order Details]
-
-SELECT cu.CustomerID, Country, MAX(Quantity)
-	FROM Customers AS cu
-	INNER JOIN Orders AS o
-	ON cu.CustomerID = o.CustomerID
-	INNER JOIN [Order Details] AS od
-	ON o.OrderID = od.OrderID
-	GROUP BY cu.CustomerID, Country
-	ORDER BY Country
-
+--12. Mejor cliente (el que más nos compra) de cada país.
 --13. Número de productos diferentes que nos compra cada cliente.
 --14. Clientes que nos compran más de cinco productos diferentes.
 --15. Vendedores que han vendido una mayor cantidad que la media en US $ en el año 97.
