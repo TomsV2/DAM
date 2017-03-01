@@ -1,4 +1,8 @@
+import java.util.*;
+
 public class ClaseDirector {
+	
+	ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 	
 	//Atributos básicos
 	private String nombreDirector = new String();
@@ -7,20 +11,27 @@ public class ClaseDirector {
 	//Constructor por defecto
 	public ClaseDirector(){
 		nombreDirector = "Nombre del director PorDefecto";
-		array5MejoresPeliculas[0] = ClasePelicula();
-		//array5MejoresPeliculas[2] = "Mejor pelicula 2";
-		//array5MejoresPeliculas[3] = "Mejor pelicula 3";
-		//array5MejoresPeliculas[4] = "Mejor pelicula 4";
-		//array5MejoresPeliculas[5] = "Mejor pelicula 5";
+		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
+
 	}
 	
 	//Constructor con parámetros (sobrecargado)
-	public ClaseDirector(String nNombreDirector, String nPelicula){
-		nombrePelicula = nNombrePelicula;
+	public ClaseDirector(String nNombreDirector, ClasePelicula nArray5MejoresPeliculas){
 		
-		for(int i=0; i<5; i++){
-			array5MejoresPeliculas [i+1] = nPelicula;
-		}
+		nombreDirector = nNombreDirector;
+		
+		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
+		
+		//~ for(int i=0; i<5; i++){
+			//~ 
+			//~ System.out.print("Introduzca el nombre de la pelicula numero " +(i+1) +" :");
+			//~ String nombrePelicula = teclado.nextLine();
+			//~ 
+			//~ System.out.print("Introduzca el anio de estreno de la pelicula :");
+			//~ int anioEstreno = teclado.nextInt();
+			//~ 
+			//~ array5MejoresPeliculas [i+1] = new ClasePelicula(nombrePelicula, anioEstreno);
+		//~ }
 	}
 	
 	//Gets
