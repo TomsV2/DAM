@@ -38,7 +38,7 @@ public class ClasePelicula {
 	
 	@Override //toString
 	public String toString(){
-		String s = "La pelicula " +getNombrePelicula() +" se estreno en el anio " +getAnioEstreno();
+		String s = "La pel\u00edcula " +'"' +getNombrePelicula() +'"' +" se estren\u00f3 en el a\u00f1o " +getAnioEstreno();
 		return s;
 	}
 	
@@ -76,12 +76,6 @@ public class ClasePelicula {
 			}
 		}
 		return igual;
-	}
-		
-	//Método para crear un array de peliculas (5 peliculas en concreto)
-	
-	ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];	
-		
-	
+	}	
 }
 
