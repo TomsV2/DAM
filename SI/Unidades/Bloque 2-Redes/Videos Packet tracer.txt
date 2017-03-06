@@ -1,0 +1,41 @@
+
+DansCourses. Basic tutorials
+
+Packet Tracer for Beginners - Part 1 
+https://www.youtube.com/watch?v=3wz8qI_nBK4
+
+Packet Tracer for Beginners - Part 2 
+https://www.youtube.com/watch?v=QLXuRotZq3Q
+
+
+
+Basic Switch and Network Configuration Using Packet Tracer - CCNA 
+
+Video 1: https://www.youtube.com/watch?v=vpONHnQECR4
+Video 2: https://www.youtube.com/watch?v=JjHDqKNxtpw
+Video 3: https://www.youtube.com/watch?v=4FOL1Q7vpLQ
+Video 4: https://www.youtube.com/watch?v=dmGbMMd-fus
+
+
+
+Packet Tracer Intro to Routing -Cisco CCNA
+
+Son 4 videos
+
+Video 1: www.youtube.com/watch?v=1ON1PNWRryE
+
+Video 2: www.youtube.com/watch?v=D6MwCQeJ80E
+
+video 3: www.youtube.com/watch?v=oVeby5NkhfY
+
+video 4: www.youtube.com/watch?v=ZY7M5G3S6k0
+
+
+
+Otro video sobre RIP en español:
+
+www.youtube.com/watch?v=Ln6Lg5jWM5o
+
+
+Filtros ACL:
+https://www.youtube.com/watch?v=4PPUvRj2PvM
