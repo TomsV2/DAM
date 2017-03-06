@@ -10,7 +10,9 @@ public class TestClaseDirector {
 		
 		//ClaseDirector director1 = new ClaseDirector("SrMieo",cpe);
 		
-		System.out.print(ClaseDirector directorVacio = new ClaseDirector());
+		ClaseDirector directorVacio = new ClaseDirector();
+		
+		//System.out.println(arrayMemoria [0].toString());
 		
 	}
 }

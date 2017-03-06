@@ -2,21 +2,19 @@ import java.util.*;
 
 public class ClaseDirector {
 	
-	ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
-	
 	//Atributos básicos
 	private String nombreDirector = new String();
+	private ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 	
 	
 	//Constructor por defecto
 	public ClaseDirector(){
 		nombreDirector = "Nombre del director PorDefecto";
 		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
-
 	}
 	
 	//Constructor con parámetros (sobrecargado)
-	public ClaseDirector(String nNombreDirector, ClasePelicula nArray5MejoresPeliculas){
+	public ClaseDirector(String nNombreDirector){
 		
 		nombreDirector = nNombreDirector;
 		
@@ -47,12 +45,11 @@ public class ClaseDirector {
 	
 	//Métodos sobrescritos
 	
-	@Override //toString
+	/*@Override //toString
 	public String toString(){
-		String s =  "Estas son las 5 mejores peliculas del director " +getNombreDirector() +" :"
-				   +"\n";
+		String s = "" +toString() +ClasePelicula.toString();
 		return s;
-	}
+	}*/
 	
 	@Override //hashCode
 	public int hashCode(){
