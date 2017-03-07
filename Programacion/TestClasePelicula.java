@@ -20,8 +20,45 @@ public class TestClasePelicula {
 		System.out.println(pelicula1.toString());
 		System.out.println(" ");
 		
-		ClasePelicula vDeVendetta = new ClasePelicula("V de vendetta", 2005);
-		System.out.println(vDeVendetta.toString());
+		ClasePelicula pelicula2 = new ClasePelicula("V de vendetta", 2005);
+		System.out.println(pelicula2.toString());
+		
+		System.out.println(" ");
+		System.out.println("-------------Gets----------------");
+		System.out.println(" ");
+		
+		System.out.println("Nombre de la pelicula 1: "  +pelicula1.getNombrePelicula());
+		System.out.println("A\u00f1o de estreno de la pelicula 1: " +pelicula1.getAnioEstreno());
+		
+		System.out.println(" ");
+		
+		System.out.println("Nombre de la pelicula 2: "  +pelicula2.getNombrePelicula());
+		System.out.println("A\u00f1o de estreno de la pelicula 2: " +pelicula2.getAnioEstreno());
+		
+		System.out.println(" ");
+		System.out.println("-------------Sets----------------");
+		System.out.println(" ");
+		
+		System.out.println(pelicula1.toString()); //pelicula sin modificar
+		
+		pelicula1.setNombrePelicula("Moulin Rouge!"); //Cambiamos el nombre
+		pelicula1.setAnioEstreno(2001); //Cambiamos el año de estreno
+		
+		System.out.println(" ");
+		
+		System.out.println("El nuevo nombre es: " +pelicula1.getNombrePelicula());
+		System.out.println("El nuevo a\u00f1o es: " +pelicula1.getAnioEstreno());
+		
+		System.out.println(" ");
+		
+		System.out.println(pelicula1.toString());
+		
+		System.out.println(" ");
+		System.out.println("-------------Hash code----------------");
+		System.out.println(" ");
+		
+		System.out.println("Hash code de " +pelicula1.getNombrePelicula() +": " +pelicula1.hashCode());
+		System.out.println("Hash code de " +pelicula2.getNombrePelicula() +": " +pelicula2.hashCode());
 		
 		System.out.println(" ");
 		System.out.println("-------------Array----------------");
