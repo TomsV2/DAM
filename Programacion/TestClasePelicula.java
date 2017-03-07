@@ -61,6 +61,16 @@ public class TestClasePelicula {
 		System.out.println("Hash code de " +pelicula2.getNombrePelicula() +": " +pelicula2.hashCode());
 		
 		System.out.println(" ");
+		System.out.println("-------------Clone----------------");
+		System.out.println(" ");
+		
+		ClasePelicula copiaPelicula2 = null;
+		
+		copiaPelicula2 = pelicula2.clone();
+		
+		System.out.println(copiaPelicula2.toString());
+		
+		System.out.println(" ");
 		System.out.println("-------------Array----------------");
 		System.out.println(" ");
 		
