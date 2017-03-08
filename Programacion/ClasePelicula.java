@@ -1,4 +1,4 @@
-public class ClasePelicula {
+public class ClasePelicula implements Cloneable, Comparable<ClasePelicula>{
 	
 	//Atributos básicos
 	private String nombrePelicula = new String();
@@ -60,6 +60,21 @@ public class ClasePelicula {
 			System.out.println("Objeto no clonado");
 		}
 		return copia;
+	}
+	
+	@Override //compareTo
+	public int compareTo(ClasePelicula p){
+		int compara = 0;
+		
+		if(getAnioEstreno() > p.getAnioEstreno()){
+			compara = 1;
+		}
+		else{
+			if(getAnioEstreno() < p.getAnioEstreno()){
+				compara = -1;
+			}
+		}
+		return compara;
 	}
 	
 	@Override //equals

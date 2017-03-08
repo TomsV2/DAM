@@ -71,6 +71,34 @@ public class TestClasePelicula {
 		System.out.println(copiaPelicula2.toString());
 		
 		System.out.println(" ");
+		System.out.println("-------------Compare to----------------");
+		System.out.println(" ");
+		
+		System.out.println("Comparando la pelicula 2 con su copia:");
+		System.out.println(pelicula2.compareTo(copiaPelicula2));
+		System.out.println(" ");
+		System.out.println("Comparando la pelicula 1 con la copia de la pelicula 2:");
+		System.out.println(pelicula1.compareTo(copiaPelicula2));
+		System.out.println(" ");
+		System.out.println("Comparando la pelicula 2 con la pelicula 1:");
+		System.out.println(pelicula2.compareTo(pelicula1));
+		
+		System.out.println(" ");
+		System.out.println("-------------Equals----------------");
+		System.out.println(" ");
+		
+		System.out.print("Son iguales la pelicula 2 y su copia?  --->  ");
+		System.out.println(pelicula2.equals(copiaPelicula2));
+		
+		System.out.println(" ");
+		System.out.print("Son iguales la pelicula 1 y la pelicula 1?  --->  ");
+		System.out.println(pelicula1.equals(pelicula1));
+		
+		System.out.println(" ");
+		System.out.print("Son iguales la pelicula 2 y la pelicula 1?  --->  ");
+		System.out.println(pelicula2.equals(pelicula1));
+		
+		System.out.println(" ");
 		System.out.println("-------------Array----------------");
 		System.out.println(" ");
 		
