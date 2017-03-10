@@ -100,7 +100,7 @@ public class TestClasePelicula {
 		
 		System.out.println(" ");
 		System.out.println("-------------Array----------------");
-		System.out.println(" ");
+		
 		
 		ClasePelicula [] array5Peliculas = new ClasePelicula [5];
 		
@@ -108,10 +108,9 @@ public class TestClasePelicula {
 			
 			ClasePelicula pelicula = new ClasePelicula();
 			
+			System.out.println(" ");
 			System.out.print("Introduzca el nombre de la pelicula numero " +(i+1) +": ");
 			pelicula.setNombrePelicula(teclado.nextLine());
-			
-			System.out.println(" ");
 			
 			System.out.print("Introduzca el a\u00f1o de su estreno: ");
 			pelicula.setAnioEstreno(teclado.nextInt());

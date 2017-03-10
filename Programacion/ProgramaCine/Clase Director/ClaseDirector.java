@@ -14,19 +14,11 @@ public class ClaseDirector {
 	}
 	
 	//Constructor con parámetros (sobrecargado)
-	public ClaseDirector(String nNombreDirector, ){
+	public ClaseDirector(String nNombreDirector){
 		
 		nombreDirector = nNombreDirector;
 		
 		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
-		
-		ClasePelicula peli1 = new ClasePelicula();
-		ClasePelicula peli2 = new ClasePelicula();
-		ClasePelicula peli3 = new ClasePelicula();
-		ClasePelicula peli4 = new ClasePelicula();
-		ClasePelicula peli5 = new ClasePelicula();
-		
-		arrayMemoria [1] = memoria2.clone();
 		
 		//~ for(int i=0; i<5; i++){
 			//~ 
