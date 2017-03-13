@@ -121,7 +121,7 @@ public class TestClasePelicula {
 		}
 		
 		System.out.println(" ");
-		System.out.println("----------------Array de 5 peliculas----------------");
+		System.out.println("----------------Mostrar Array de 5 peliculas----------------");
 		for(int i=0; i<array5Peliculas.length; i++){
 			System.out.println(array5Peliculas[i]);
 			System.out.println(" ");

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ClaseDirector {
+public class ClaseDirector implements Cloneable/*, Comparable<ClaseDirector>*/{
 	
 	//Atributos básicos
 	private String nombreDirector = new String();
@@ -14,30 +14,18 @@ public class ClaseDirector {
 	}
 	
 	//Constructor con parámetros (sobrecargado)
-	public ClaseDirector(String nNombreDirector, ){
+	public ClaseDirector(String nNombreDirector){
 		
 		nombreDirector = nNombreDirector;
 		
 		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 		
-		ClasePelicula peli1 = new ClasePelicula();
-		ClasePelicula peli2 = new ClasePelicula();
-		ClasePelicula peli3 = new ClasePelicula();
-		ClasePelicula peli4 = new ClasePelicula();
-		ClasePelicula peli5 = new ClasePelicula();
+		array5MejoresPeliculas [0] = null;
+		array5MejoresPeliculas [1] = null;
+		array5MejoresPeliculas [2] = null;
+		array5MejoresPeliculas [3] = null;
+		array5MejoresPeliculas [4] = null;
 		
-		arrayMemoria [1] = memoria2.clone();
-		
-		//~ for(int i=0; i<5; i++){
-			//~ 
-			//~ System.out.print("Introduzca el nombre de la pelicula numero " +(i+1) +" :");
-			//~ String nombrePelicula = teclado.nextLine();
-			//~ 
-			//~ System.out.print("Introduzca el anio de estreno de la pelicula :");
-			//~ int anioEstreno = teclado.nextInt();
-			//~ 
-			//~ array5MejoresPeliculas [i+1] = new ClasePelicula(nombrePelicula, anioEstreno);
-		//~ }
 	}
 	
 	//Gets

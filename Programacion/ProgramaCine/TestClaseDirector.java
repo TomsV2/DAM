@@ -12,6 +12,8 @@ public class TestClaseDirector {
 		
 		ClaseDirector directorVacio = new ClaseDirector();
 		
+		System.out.println(directorVacio);
+		
 		//System.out.println(arrayMemoria [0].toString());
 		
 	}
