@@ -1,16 +1,14 @@
 import java.util.*;
 
-public class ClaseDirector implements Cloneable/*, Comparable<ClaseDirector>*/{
+public class ClaseDirector implements Cloneable, Comparable<ClaseDirector>{
 	
 	//Atributos básicos
 	private String nombreDirector = new String();
-	private ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 	
 	
 	//Constructor por defecto
 	public ClaseDirector(){
 		nombreDirector = "Nombre del director PorDefecto";
-		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 	}
 	
 	//Constructor con parámetros (sobrecargado)
@@ -18,13 +16,13 @@ public class ClaseDirector implements Cloneable/*, Comparable<ClaseDirector>*/{
 		
 		nombreDirector = nNombreDirector;
 		
-		ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
+		/*ClasePelicula [] array5MejoresPeliculas = new ClasePelicula [5];
 		
 		array5MejoresPeliculas [0] = null;
 		array5MejoresPeliculas [1] = null;
 		array5MejoresPeliculas [2] = null;
 		array5MejoresPeliculas [3] = null;
-		array5MejoresPeliculas [4] = null;
+		array5MejoresPeliculas [4] = null;*/
 		
 	}
 	
@@ -65,6 +63,21 @@ public class ClaseDirector implements Cloneable/*, Comparable<ClaseDirector>*/{
 			System.out.println("Objeto no clonado");
 		}
 		return copia;
+	}
+	
+	@Override //compareTo
+	public int compareTo(ClaseDirector d){
+		int compara = 0;
+		
+		if(getAnioEstreno() > p.getAnioEstreno()){
+			compara = 1;
+		}
+		else{
+			if(getAnioEstreno() < p.getAnioEstreno()){
+				compara = -1;
+			}
+		}
+		return compara;
 	}
 	
 	@Override //equals
