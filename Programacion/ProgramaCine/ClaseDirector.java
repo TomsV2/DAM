@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ClaseDirector implements Cloneable, Comparable<ClaseDirector>{
+public class ClaseDirector implements Cloneable{
 	
 	//Atributos básicos
 	private String nombreDirector = new String();
@@ -8,7 +8,7 @@ public class ClaseDirector implements Cloneable, Comparable<ClaseDirector>{
 	
 	//Constructor por defecto
 	public ClaseDirector(){
-		nombreDirector = "Nombre del director PorDefecto";
+		nombreDirector = "Director Por Defecto";
 	}
 	
 	//Constructor con parámetros (sobrecargado)
@@ -39,11 +39,11 @@ public class ClaseDirector implements Cloneable, Comparable<ClaseDirector>{
 	
 	//Métodos sobrescritos
 	
-	/*@Override //toString
+	@Override //toString
 	public String toString(){
-		String s = "" +toString() +ClasePelicula.toString();
+		String s = "Nombre del director: " +getNombreDirector();
 		return s;
-	}*/
+	}
 	
 	@Override //hashCode
 	public int hashCode(){
@@ -63,21 +63,6 @@ public class ClaseDirector implements Cloneable, Comparable<ClaseDirector>{
 			System.out.println("Objeto no clonado");
 		}
 		return copia;
-	}
-	
-	@Override //compareTo
-	public int compareTo(ClaseDirector d){
-		int compara = 0;
-		
-		if(getAnioEstreno() > p.getAnioEstreno()){
-			compara = 1;
-		}
-		else{
-			if(getAnioEstreno() < p.getAnioEstreno()){
-				compara = -1;
-			}
-		}
-		return compara;
 	}
 	
 	@Override //equals
