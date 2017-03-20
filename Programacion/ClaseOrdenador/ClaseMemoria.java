@@ -36,7 +36,7 @@ public class ClaseMemoria implements Cloneable, Comparable <ClaseMemoria> {
 		
 		//SETS
 		public void setTamanio(double nTamanio){
-		tamanio = nTamanio;
+			tamanio = nTamanio;
 		}
 		
 		public void setVelocidad(double nVelocidad){
