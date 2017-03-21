@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+==========================================================================
+| File..........: universidad.xml
+| Author........: Paquito el Chocolatero
+| Date..........: 7-Mar-2017
+| Description...: Fichero en XML para hacer los Ejercicios de XPath.
+|                 Describe los datos de una Universidad en la que
+|                 hay carreras, asignaturas y alumnos.
+==========================================================================
+-->
+
+<universidad>
+
+    <nombre>Universidad de Mortadelo y Filemón</nombre>
+    <pais>Españistán</pais>
+
+<!-- CARRERAS -->
+
+    <carreras>
+
+        <carrera id="c01">
+            <nombre>Grado en Ingeniería de Pito del Sereno</nombre>
+            <plan>2013</plan>
+            <creditos>240</creditos>
+            <centro>Escuela de Informática</centro>
+        </carrera>
+
+        <carrera id="c02">
+            <nombre>Grado en Mareado de perdices</nombre>
+            <plan>2011</plan>
+            <creditos>235</creditos>
+            <centro>Facultad de Ciencias Sociales</centro>
+        </carrera>
+
+        <carrera id="c03">
+            <nombre>Grado en Mobilidad de Papeles Rosas</nombre>
+            <plan>2011</plan>
+            <creditos>250</creditos>
+            <centro>Facultad de Ciencias Sociales</centro>
+            <subdirector>Alfonso Martín  Luque</subdirector>
+        </carrera>
+
+        <carrera id="c04">
+            <nombre>Grado en Macramé</nombre>
+            <plan>2013</plan>
+            <creditos>175</creditos>
+            <centro>Facultad de Ciencias Experimentales</centro>
+        </carrera>
+
+        <carrera id="c05">
+            <nombre>Grado en Pozí-Ponó</nombre>
+            <plan>2015</plan>
+            <creditos>175</creditos>
+            <centro>Facultad de Ciencias Experimentales</centro>
+        </carrera>
+
+        <carrera id="c06">
+            <nombre>Grado en petit point</nombre>
+            <plan>2004</plan>
+            <creditos>275</creditos>
+            <centro>Facultad de Humanidades</centro>
+        </carrera>
+
+    </carreras>
+
+<!-- ASIGNATURAS -->
+
+    <asignaturas>
+
+        <asignatura id="a01" titulacion="c01">
+            <nombre>Ofimática</nombre>
+            <creditos_teoricos>3</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+
+        <asignatura id="a02" titulacion="c01">
+            <nombre>Ingeniería del Software</nombre>
+            <creditos_teoricos>6</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+
+        <asignatura id="a03" titulacion="c02">
+            <nombre>Administración de Empresas</nombre>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+
+        <asignatura id="a04" titulacion="c02">
+            <nombre>Derecho Internacional</nombre>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+
+        <asignatura id="a05" titulacion="c04">
+            <nombre>Pedagogía</nombre>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>1.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+
+        <asignatura id="a06" titulacion="c03">
+            <nombre>Didáctica</nombre>
+            <creditos_teoricos>4</creditos_teoricos>
+            <creditos_practicos>3</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+
+        <asignatura id="a07" titulacion="c04">
+            <nombre>Tecnología de los Alimentos</nombre>
+            <creditos_teoricos>1.5</creditos_teoricos>
+            <creditos_practicos>7.5</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+
+        <asignatura id="a08" titulacion="c01">
+            <nombre>Bases de Datos</nombre>
+            <creditos_teoricos>4.5</creditos_teoricos>
+            <creditos_practicos>5.5</creditos_practicos>
+            <trimestre>1</trimestre>
+        </asignatura>
+
+        <asignatura id="a09" titulacion="c06">
+            <nombre>Historia del Pensamiento</nombre>
+            <creditos_teoricos>6</creditos_teoricos>
+            <creditos_practicos>0</creditos_practicos>
+            <trimestre>2</trimestre>
+        </asignatura>
+
+    </asignaturas>
+
+<!-- ALUMNOS -->
+
+    <alumnos>
+
+        <alumno id="e01">
+            <apellido1>Abuelo</apellido1>
+            <apellido2>Picador</apellido2>
+            <nombre>Víctor Manuel</nombre>
+            <sexo>Hombre</sexo>
+            <estudios>
+                <carrera codigo="c01"/>
+                <asignaturas>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a03"/>
+                    <asignatura codigo="a05"/>
+                    <asignatura codigo="a09"/>
+                </asignaturas>
+            </estudios>
+        </alumno>
+
+        <alumno id="e02">
+            <apellido1>Borida</apellido1>
+            <apellido2></apellido2>
+            <nombre>Luisa</nombre>
+            <sexo>Mujer</sexo>
+            <estudios>
+                <carrera codigo="c02"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                </asignaturas>
+                <proyecto>Web de IBM.com</proyecto>
+            </estudios>
+
+        </alumno>
+
+        <alumno id="e03" beca="si">
+            <apellido1>Bladillo</apellido1>
+            <apellido2>Suelto</apellido2>
+            <nombre>Fernando</nombre>
+            <sexo>Hombre</sexo>
+            <estudios>
+                <carrera codigo="c02"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a04"/>
+                    <asignatura codigo="a09"/>
+                </asignaturas>
+            </estudios>
+        </alumno>
+
+        <alumno id="e04">
+            <apellido1>Quesí</apellido1>
+            <apellido2>Guapi</apellido2>
+            <nombre>Clara</nombre>
+            <sexo>Mujer</sexo>
+            <estudios>
+                <carrera codigo="c01"/>
+                <asignaturas>
+                    <asignatura codigo="a02"/>
+                    <asignatura codigo="a01"/>
+                    <asignatura codigo="a07"/>
+                </asignaturas>
+                <proyecto>Estudio del gimnasio de Ciudad Azulona</proyecto>
+            </estudios>
+        </alumno>
+
+    </alumnos>
+
+</universidad>
+	
