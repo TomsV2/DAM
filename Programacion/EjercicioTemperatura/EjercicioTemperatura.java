@@ -2,6 +2,8 @@ import java.util.*;
 
 public class EjercicioTemperatura {
 	
+	Random random = new Random();
+	int aleatorio = 0;
 	
 	/* Atributos básicos:
 	 * 		+Array bidimensional
@@ -16,20 +18,35 @@ public class EjercicioTemperatura {
 	public EjercicioTemperatura(){
         for(int i=0; i<calendario.length; i++){
             for(int j=0; j<calendario[i].length; j++){
-                calendario[i][j] = 1;
+                calendario[i][j] = 2;
             }
         }
     }
 	
-	/*---waeilufhawiefbhpwehgpawi ufgpqweuihfpawiuefhpqiwuefhpehpiawuefbpiwufgpawiurfvbpweriagpiaebgvpiajebejifgbfjjfjfjfjahsiñdufghapWEUFHPwuefh*/
-	/*//Constructor con parámetros
-	public EjercicioTemperatura(){
-		
-	}*/
+	//Constructor con parámetros
+	public EjercicioTemperatura(int aleatorio){
+		for(int i=0; i<calendario.length; i++){
+			for(int j=0; j<calendario[i].length; j++){
+				
+				//Sería de 0 a 45 grados
+				aleatorio = random.nextInt(46);
+				calendario[i][j] = aleatorio;
+			}
+		}
+	}
 	
 	//GETS
-	public int [][] getCalendario(){
-		return calendario;
+	public void pintarCalendario(){
+		for(int i=0; i<calendario.length; i++){
+			System.out.println("");
+			System.out.println("Fila " +(i+1) +": ");
+			
+			for(int j=0; j<calendario[i].length; j++){
+				System.out.print("|");
+				System.out.print(calendario [i][j] +"|");
+			}
+			System.out.println("");
+		}
 	}
 	
 //-------------------------------------------------------------------------------
@@ -51,12 +68,10 @@ public class EjercicioTemperatura {
 		double media = 0;
 		double suma = 0;
 		 
-		for(int i=0; i==mes-1; i++){
-			for(int j=0; j<calendario[i].length; j++){
-				suma = suma + calendario[i][j];
-			}
-			media = suma/31;
+		for(int j=0; j<calendario[mes].length; j++){
+			suma = suma + calendario[mes][j];
 		}
+		media = suma/31;
 		return media;
 	}
 	
