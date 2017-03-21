@@ -1,13 +1,8 @@
 
 
-public class ClaseCarta implements Cloneable, Comparable <ClaseCarta>{
+public class ClasePalo implements Cloneable, Comparable <ClasePalo>{
 	
 	/* Atributos básicos
-	 * 
-	 * 		+palo
-	 * 			-Tipo: char
-	 * 			-Consult: Sí	---> Get ---> char getPalo();
-	 * 			-Modif: Sí		---> Set ---> void setPalo(char nPalo);
 	 * 
 	 * 		+numero
 	 * 			-Tipo: int
@@ -17,35 +12,24 @@ public class ClaseCarta implements Cloneable, Comparable <ClaseCarta>{
 	 */
 	 
 	//Atributos básicos
-	private char palo;
 	private int numero;
 	
 	//Constructor por defecto
-	public ClaseCarta(){
-		palo = 'x';
+	public ClasePalo(){
 		numero = 0;
 	}
 	
 	//Constructor sobrecargado
-	public ClaseCarta(char nPalo, int nNumero){
-		palo = nPalo;
+	public ClasePalo(int nNumero){
 		numero = nNumero;
 	}
 	
 	//Gets
-	public char getPalo(){
-		return palo;
-	}
-	
 	public int getNumero(){
 		return numero;
 	}
 	
 	//Sets
-	public void setPalo(char nPalo){
-		palo = nPalo;
-	}
-	
 	public void setNumero(int nNumero){
 		numero = nNumero;
 	}
@@ -54,7 +38,7 @@ public class ClaseCarta implements Cloneable, Comparable <ClaseCarta>{
 	
 	@Override //toString
 	public String toString(){
-		String s = (+getNumero() +" de " +getPalo());
+		String s = ("Numero de la carta: " +getNumero());
 		return s;
 	}
 	
@@ -64,12 +48,12 @@ public class ClaseCarta implements Cloneable, Comparable <ClaseCarta>{
 	}
 	
 	@Override //clone
-	public ClaseCarta clone(){
+	public ClasePalo clone(){
 		
-		ClaseCarta copia = null;
+		ClasePalo copia = null;
 		
 		try{
-			copia = (ClaseCarta) super.clone();
+			copia = (ClasePalo) super.clone();
 		}
 		
 		catch (CloneNotSupportedException error){
@@ -79,19 +63,19 @@ public class ClaseCarta implements Cloneable, Comparable <ClaseCarta>{
 	}
 	
 	@Override //compareTo
-	public int compareTo(ClaseCarta c){
+	public int compareTo(ClasePalo p){
 			int compara = 0;
 			
-			if(getNumero() > c.getNumero()){
+			if(getNumero() > p.getNumero()){
 				compara = 1;
 			}
 			else{
-				if(getNumero() < c.getNumero()){
+				if(getNumero() < p.getNumero()){
 					compara = -1;
 				}
 			}
 			return compara;
-		}
+		}	
 	
 }
 
