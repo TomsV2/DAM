@@ -7,7 +7,7 @@ public class EjercicioTemperatura {
 	
 	/* Atributos básicos:
 	 * 		+Array bidimensional
-	 * 			-consultable: Sí	---> Get ---> int [][] getCalendario();
+	 * 			-consultable: Sí
 	 * 			-modificable: No
 	 */
 	
@@ -35,7 +35,22 @@ public class EjercicioTemperatura {
 		}
 	}
 	
-	//GETS
+//-------------------------------------------------------------------------------
+
+	/* 
+	 * Nombre: pintarCalendario
+	 * Comentario: Imprimirá el calendario por pantalla
+	 * Cabezera/Prototipo: void pintarCalendario()
+	 * 
+	 * Precondiciones: Nada
+	 * Entradas: Ninguna
+	 * Salidas: Calendario
+	 * E/S: Ninguna
+	 * Postcondiciones: Nada
+	 * 
+	 * Restricciones: Nada
+	 */
+	
 	public void pintarCalendario(){
 		for(int i=0; i<calendario.length; i++){
 			System.out.println("");
@@ -51,7 +66,8 @@ public class EjercicioTemperatura {
 	
 //-------------------------------------------------------------------------------
 
-	/* Nombre: mediaMes
+	/* 
+	 * Nombre: mediaMes
 	 * Comentario: Calculará la temperatura media de un mes
 	 * Cabezera/Prototipo: double mediaMes(int [][] calendario)
 	 * 
@@ -60,6 +76,7 @@ public class EjercicioTemperatura {
 	 * Salidas: la media de los días
 	 * E/S:
 	 * Postcondiciones: el número será un double
+	 * 
 	 * Restricciones: el número estará entre 1 y 12
 	 */
 	 
@@ -74,6 +91,83 @@ public class EjercicioTemperatura {
 		media = suma/31;
 		return media;
 	}
+	
+//-------------------------------------------------------------------------------
+	
+	/* 
+	 * Nombre: minimaMes
+	 * Comentario: Dirá cual es la temperatura más baja del mes indicado
+	 * Cabezera/Prototipo: int minimaMes(int mes)
+	 * 
+	 * Precondiciones: un número entero (que indicará el mes)
+	 * Entradas: un int
+	 * Salidas: un int
+	 * E/S: Nada
+	 * Postcondiciones: Nada
+	 * 
+	 * Restricciones: El mes tiene que estar entre 1 y 12
+	 */
+	
+	public int minimaMes(int mes){
+		
+		int minima = null;
+		
+		for(int j=0; j<calendario[mes].length; j++){
+			
+			if(minima == null || calendario[mes][j] < minima){
+				minima = calendario[mes][j];
+
+			}
+		}
+		return minima;
+	}
+	
+//-------------------------------------------------------------------------------
+	
+	/* 
+	 * Nombre: maximaMes
+	 * Comentario: Dirá cual es la temperatura más alta del mes indicado
+	 * Cabezera/Prototipo: int maximaMes(int mes)
+	 * 
+	 * Precondiciones: un número entero (que indicará el mes)
+	 * Entradas: un int
+	 * Salidas: un int
+	 * E/S: Nada
+	 * Postcondiciones: Nada
+	 * 
+	 * Restricciones: El mes tiene que estar entre 1 y 12
+	 */
+	
+	public int maximaMes(int mes){
+		
+		int minima = 0;
+		int maxima = 0;
+		
+		for(int j=0; j<calendario[mes].length; j++){
+			
+			if(calendario[mes][j] > minima){
+				minima = calendario[mes][j];
+				maxima = minima;
+			}
+		}
+		return maxima;
+	}
+	
+//-------------------------------------------------------------------------------
+
+	/* 
+	 * Nombre: diaMaximaTemperatura
+	 * Comentario: 
+	 * Cabezera/Prototipo: void maximaMinimaMes(int mes)
+	 * 
+	 * Precondiciones: un número entero (que indicará el mes)
+	 * Entradas: un int
+	 * Salidas: Nada
+	 * E/S: Nada
+	 * Postcondiciones: Nada
+	 * 
+	 * Restricciones: El mes tiene que estar entre 1 y 12
+	 */
 	
 }
 
