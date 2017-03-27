@@ -5,7 +5,6 @@ public class TestEjercicioTemperatura{
 	public static void main (String args[]) {
 		
 		System.out.println("------------ Constructor por defecto + pintarCalendario ------------");
-		System.out.println(" ");
 		
 		EjercicioTemperatura calendario0 = new EjercicioTemperatura();
 		calendario0.pintarCalendario();
@@ -41,6 +40,16 @@ public class TestEjercicioTemperatura{
 		System.out.println(" ");
 		System.out.println("Minima de Enero del calendario aleatorio: " +calendarioR.minimaMes(0));
 		System.out.println("Maxima de Enero del calendario aleatorio: " +calendarioR.maximaMes(0));
+		
+		System.out.println(" ");
+		System.out.println("------------ Minima y Maxima de un calendario ------------");
+		System.out.println(" ");
+		
+		System.out.println("Minima del calendario por defecto: " +calendario0.minimaAnio());
+		System.out.println("Maxima del calendario por defecto: " +calendario0.maximaAnio());
+		System.out.println(" ");
+		System.out.println("Minima del calendario aleatorio: " +calendarioR.minimaAnio());
+		System.out.println("Maxima del calendario aleatorio: " +calendarioR.maximaAnio());
 		
 		
 	}

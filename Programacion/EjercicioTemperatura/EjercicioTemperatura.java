@@ -154,10 +154,10 @@ public class EjercicioTemperatura {
 
 	/* 
 	 * Nombre: minimaAnio
-	 * Comentario: 
+	 * Comentario: Encuentra la temperatura más pequeña del año
 	 * Cabezera/Prototipo: int minimaAnio()
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: Nada
 	 * Entradas: Nada
 	 * Salidas: valor mínimo del array (calendario)
 	 * E/S: Nada
@@ -172,10 +172,45 @@ public class EjercicioTemperatura {
 		
 		for(int i=0; i<calendario.length; i++){
 			for(int j=0; j<calendario[i].length; j++){
-				
+				if(calendario[i][j] < minima){
+					minima = calendario[i][j];
+				}
 			}
 		}
-		return
+		return minima;
+	}
+	
+//-------------------------------------------------------------------------------
+
+	/* 
+	 * Nombre: maximaAnio
+	 * Comentario: Encuentra la temperatura más elevada del año
+	 * Cabezera/Prototipo: int maximaAnio()
+	 * 
+	 * Precondiciones: Nada
+	 * Entradas: Nada
+	 * Salidas: valor maximo del array (calendario)
+	 * E/S: Nada
+	 * Postcondiciones: Nada
+	 * 
+	 * Restricciones: Nada
+	 */
+	 
+	public int maximaAnio(){
+		
+		int maxima = Integer.MIN_VALUE;
+		
+		for(int i=0; i<calendario.length; i++){
+			
+			for(int j=0; j<calendario[i].length; j++){
+				
+				if(calendario[i][j] > maxima){
+					maxima = calendario[i][j];
+					
+				}
+			}
+		}
+		return maxima;
 	}
 	
 }
