@@ -96,7 +96,7 @@ public class EjercicioTemperatura {
 	
 	/* 
 	 * Nombre: minimaMes
-	 * Comentario: Dirá cual es la temperatura más baja del mes indicado
+	 * Comentario: Encuentra cual es la temperatura más baja del mes indicado
 	 * Cabezera/Prototipo: int minimaMes(int mes)
 	 * 
 	 * Precondiciones: un número entero (que indicará el mes)
@@ -110,13 +110,12 @@ public class EjercicioTemperatura {
 	
 	public int minimaMes(int mes){
 		
-		int minima = null;
+		int minima = Integer.MAX_VALUE;   //Integer.MAX_VALUE; Valor máximo de int
 		
 		for(int j=0; j<calendario[mes].length; j++){
 			
-			if(minima == null || calendario[mes][j] < minima){
+			if(calendario[mes][j] < minima){
 				minima = calendario[mes][j];
-
 			}
 		}
 		return minima;
@@ -126,7 +125,7 @@ public class EjercicioTemperatura {
 	
 	/* 
 	 * Nombre: maximaMes
-	 * Comentario: Dirá cual es la temperatura más alta del mes indicado
+	 * Comentario: Encuentra cual es la temperatura más alta del mes indicado
 	 * Cabezera/Prototipo: int maximaMes(int mes)
 	 * 
 	 * Precondiciones: un número entero (que indicará el mes)
@@ -140,14 +139,12 @@ public class EjercicioTemperatura {
 	
 	public int maximaMes(int mes){
 		
-		int minima = 0;
-		int maxima = 0;
+		int maxima = Integer.MIN_VALUE;		//Integer.MIN_VALUE; Valor mínimo de int
 		
 		for(int j=0; j<calendario[mes].length; j++){
 			
-			if(calendario[mes][j] > minima){
-				minima = calendario[mes][j];
-				maxima = minima;
+			if(calendario[mes][j] > maxima){
+				maxima = calendario[mes][j];
 			}
 		}
 		return maxima;
@@ -156,18 +153,30 @@ public class EjercicioTemperatura {
 //-------------------------------------------------------------------------------
 
 	/* 
-	 * Nombre: diaMaximaTemperatura
+	 * Nombre: minimaAnio
 	 * Comentario: 
-	 * Cabezera/Prototipo: void maximaMinimaMes(int mes)
+	 * Cabezera/Prototipo: int minimaAnio()
 	 * 
-	 * Precondiciones: un número entero (que indicará el mes)
-	 * Entradas: un int
-	 * Salidas: Nada
+	 * Precondiciones:
+	 * Entradas: Nada
+	 * Salidas: valor mínimo del array (calendario)
 	 * E/S: Nada
 	 * Postcondiciones: Nada
 	 * 
-	 * Restricciones: El mes tiene que estar entre 1 y 12
+	 * Restricciones: Nada
 	 */
+	 
+	public int minimaAnio(){
+		
+		int minima = Integer.MAX_VALUE;
+		
+		for(int i=0; i<calendario.length; i++){
+			for(int j=0; j<calendario[i].length; j++){
+				
+			}
+		}
+		return
+	}
 	
 }
 

@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class TestEjercicioTemperatura{
 	
 	public static void main (String args[]) {
@@ -31,13 +33,16 @@ public class TestEjercicioTemperatura{
 		System.out.println(calendarioR.mediaMes(3));
 		
 		System.out.println(" ");
-		System.out.println("------------ Minima de un mes ------------");
+		System.out.println("------------ Minima y Maxima de un mes ------------");
 		System.out.println(" ");
 		
-		System.out.println(calendario0.minimaMes(0));
-		System.out.println(calendarioR.minimaMes(0));
-		System.out.println(calendario0.maximaMes(0));
-		System.out.println(calendarioR.maximaMes(0));
+		System.out.println("Minima de Enero del calendario por defecto: " +calendario0.minimaMes(0));
+		System.out.println("Maxima de Enero del calendario por defecto: " +calendario0.maximaMes(0));
+		System.out.println(" ");
+		System.out.println("Minima de Enero del calendario aleatorio: " +calendarioR.minimaMes(0));
+		System.out.println("Maxima de Enero del calendario aleatorio: " +calendarioR.maximaMes(0));
+		
+		
 	}
 }
 
