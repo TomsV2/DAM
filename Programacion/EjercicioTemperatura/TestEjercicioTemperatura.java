@@ -41,6 +41,9 @@ public class TestEjercicioTemperatura{
 		System.out.println("Minima de Enero del calendario aleatorio: " +calendarioR.minimaMes(0));
 		System.out.println("Maxima de Enero del calendario aleatorio: " +calendarioR.maximaMes(0));
 		
+		System.out.println(calendarioR.diaMasFrioMes(0));
+		System.out.println(calendarioR.diaMasCalurosoMes(0));
+		
 		System.out.println(" ");
 		System.out.println("------------ Minima y Maxima de un calendario ------------");
 		System.out.println(" ");
