@@ -1,8 +1,5 @@
 public class UtilTemperatura {
 	
-	private int [][] calendario = new int [12][31];
-	private int [] fecha = new int [2];
-	
 //-------------------------------------------------------------------------------
 
 	/* 
@@ -20,6 +17,9 @@ public class UtilTemperatura {
 	 */
 	
 	public void pintarCalendario(){
+		
+		int [][] calendario = new int [12][31];
+		
 		for(int i=0; i<calendario.length; i++){
 			System.out.println("");
 			System.out.println("Fila " +(i+1) +": ");
@@ -50,6 +50,7 @@ public class UtilTemperatura {
 	 
 	public double mediaMes(int mes){
 		
+		int [][] calendario = new int [12][31];
 		double media = 0;
 		double suma = 0;
 		 
@@ -78,6 +79,7 @@ public class UtilTemperatura {
 	
 	public int minimaMes(int mes){
 		
+		int [][] calendario = new int [12][31];
 		int minima = Integer.MAX_VALUE;   //Integer.MAX_VALUE; Valor máximo de int
 		
 		for(int j=0; j<calendario[mes].length; j++){
@@ -107,6 +109,7 @@ public class UtilTemperatura {
 	
 	public int maximaMes(int mes){
 		
+		int [][] calendario = new int [12][31];
 		int maxima = Integer.MIN_VALUE;		//Integer.MIN_VALUE; Valor mínimo de int
 		
 		for(int j=0; j<calendario[mes].length; j++){
@@ -136,6 +139,7 @@ public class UtilTemperatura {
 	 
 	public int minimaAnio(){
 		
+		int [][] calendario = new int [12][31];
 		int minima = Integer.MAX_VALUE;
 		
 		for(int i=0; i<calendario.length; i++){
@@ -166,6 +170,7 @@ public class UtilTemperatura {
 	 
 	public int maximaAnio(){
 		
+		int [][] calendario = new int [12][31];
 		int maxima = Integer.MIN_VALUE;
 		
 		for(int i=0; i<calendario.length; i++){
@@ -200,6 +205,7 @@ public class UtilTemperatura {
 	
 	public int diaMasFrioMes(int mes){
 	
+	int [][] calendario = new int [12][31];
 	int minima = Integer.MAX_VALUE;
 	int dia = 0;
 		
@@ -231,6 +237,7 @@ public class UtilTemperatura {
 	
 	public int diaMasCalurosoMes(int mes){
 	
+	int [][] calendario = new int [12][31];
 	int maxima = Integer.MIN_VALUE;
 	int dia = 0;
 		
@@ -262,8 +269,9 @@ public class UtilTemperatura {
 	
 	public int[] diaMasFrioAnio(){
 	
-	int minima = Integer.MAX_VALUE;
+	int [][] calendario = new int [12][31];
 	int [] fecha = new int [2];
+	int minima = Integer.MAX_VALUE;
 		
 		for(int i=0; i<calendario.length; i++){
 			

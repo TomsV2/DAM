@@ -4,10 +4,12 @@ public class TestClaseCalendario{
 	
 	public static void main (String args[]) {
 		
+		UtilTemperatura utilTemperatura = new UtilTemperatura();
+		
 		System.out.println("------------ Constructor por defecto + pintarCalendario ------------");
 		
-		EjercicioTemperatura calendario0 = new EjercicioTemperatura();
-		calendario0.pintarCalendario();
+		ClaseCalendario calendario0 = new ClaseCalendario();
+		utilTemperatura.pintarCalendario();
 		
 		
 		System.out.println(" ");
