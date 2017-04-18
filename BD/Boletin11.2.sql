@@ -33,14 +33,15 @@ SELECT * FROM AL_Vuelos_Pasajes
 GO
 
 ALTER PROCEDURE ContarVuelos (@IDPasajero char(9), @NumeroVuelos int OUTPUT) AS
-BEGIN
+	BEGIN
 
-SET @NumeroVuelos = (SELECT COUNT(Codigo_Vuelo) AS [Número de vuelos]
-		FROM AL_Pasajes as P
-		INNER JOIN AL_Vuelos_Pasajes AS vp
-		ON Numero = Numero_Pasaje
-		WHERE P.ID_Pasajero = @IDPasajero)
-END
+		SET @NumeroVuelos = (SELECT COUNT(Codigo_Vuelo) AS [Número de vuelos]
+								FROM AL_Pasajes as P
+								INNER JOIN AL_Vuelos_Pasajes AS vp
+								ON Numero = Numero_Pasaje
+								WHERE P.ID_Pasajero = @IDPasajero)
+
+	END
 GO
 
 --Declarar variables
@@ -58,16 +59,21 @@ PRINT 'Número de vuelos: ' + CAST(@NumeroVuelos as varchar)
 
 SELECT * FROM AL_Pasajeros
 SELECT * FROM AL_Vuelos
+GO
 
-CREATE PROCEDURE HorasDeVuelo (@IDPasajero char(9), @FechaSalida smalldatetime, @FechaLlegada smalldatetime, @HorasVolando int OUTPUT ) AS
-BEGIN
-	SELECT p.ID_Pasajero, v.Llegada, v.Salida
-		FROM AL_Pasajes AS p
-		INNER JOIN AL_Vuelos_Pasajes AS vp
-		ON p.Numero = vp.Numero_Pasaje
-		INNER JOIN AL_Vuelos AS v
-		ON vp.Codigo_Vuelo = v.Codigo
-END
+SET DATEFORMAT ymd
+GO
+
+ALTER PROCEDURE HorasDeVuelo (@IDPasajero char(9), @FechaSalida smalldatetime, @FechaLlegada smalldatetime, @HorasVolando int OUTPUT ) AS
+	BEGIN
+			SET @HorasVolando = (SELECT (SUM(DATEDIFF(MINUTE,v.Salida,v.Llegada))/60) AS [Horas]
+									FROM AL_Pasajes AS p
+									INNER JOIN AL_Vuelos_Pasajes AS vp
+									ON p.Numero = vp.Numero_Pasaje
+									INNER JOIN AL_Vuelos AS v
+									ON vp.Codigo_Vuelo = v.Codigo
+									WHERE p.ID_Pasajero = @IDPasajero AND v.Salida = @FechaSalida AND v.Llegada = @FechaLlegada)
+	END
 GO
 
 --Ejercicio 4
