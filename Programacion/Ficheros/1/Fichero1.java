@@ -19,7 +19,7 @@ public class Fichero1 {
 			
 			c = entrada.read();
 			
-			while (c!= -1) 
+			while (c != -1) 
 			{ 
 				//salida.write(Character.toUpperCase(c));
 				salida.write(c);
