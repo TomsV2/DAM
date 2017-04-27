@@ -51,6 +51,7 @@ declare @IDPasajero char(9) = 'A003'
 --Ejecutar 
 EXECUTE ContarVuelos @IDPasajero, @NumeroVuelos OUTPUT
 
+--Imprimir resultado
 PRINT 'Número de vuelos: ' + CAST(@NumeroVuelos as varchar)
 
 --Ejercicio 3
@@ -64,7 +65,7 @@ GO
 SET DATEFORMAT ymd
 GO
 
-ALTER PROCEDURE HorasDeVuelo (@IDPasajero char(9), @FechaSalida smalldatetime, @FechaLlegada smalldatetime, @HorasVolando int OUTPUT ) AS
+ALTER PROCEDURE HorasDeVuelo @IDPasajero char(9), @FechaSalida smalldatetime, @FechaLlegada smalldatetime, @HorasVolando int OUTPUT AS
 	BEGIN
 			SET @HorasVolando = (SELECT (SUM(DATEDIFF(MINUTE,v.Salida,v.Llegada))/60) AS [Horas]
 									FROM AL_Pasajes AS p
@@ -72,15 +73,88 @@ ALTER PROCEDURE HorasDeVuelo (@IDPasajero char(9), @FechaSalida smalldatetime, @
 									ON p.Numero = vp.Numero_Pasaje
 									INNER JOIN AL_Vuelos AS v
 									ON vp.Codigo_Vuelo = v.Codigo
-									WHERE p.ID_Pasajero = @IDPasajero AND v.Salida = @FechaSalida AND v.Llegada = @FechaLlegada)
+									WHERE p.ID_Pasajero = @IDPasajero AND v.Salida >= @FechaSalida AND v.Llegada <= @FechaLlegada)
 	END
 GO
 
+--Declarar las variables
+DECLARE @HorasVolando int
+DECLARE @IDPasajero char(9) = 'A007'
+DECLARE @FechaSalida smalldatetime = '2012-01-14 14:05:00'
+DECLARE @FechaLlegada smalldatetime = '2013-01-14 14:05:00'
+
+--Ejecutar
+EXECUTE HorasDeVuelo @IDPasajero, @FechaSalida, @FechaLlegada, @HorasVolando OUTPUT
+
+--Imprimir resultados
+PRINT 'Número de horas volando: ' + CAST(@HorasVolando AS varchar)
+
+
 --Ejercicio 4
 --Escribe un procedimiento que reciba como parámetro todos los datos de un pasajero y un número de vuelo y realice el siguiente proceso:
---En primer lugar, comprobará si existe el pasajero. Si no es así, lo dará de alta.
+--En primer lugar, comprobará si existe el pasajero.
+--Si no es así, lo dará de alta.
 --A continuación comprobará si el vuelo tiene plazas disponibles (hay que consultar la capacidad del avión) y
 --en caso afirmativo creará un nuevo pasaje para ese vuelo.
+
+SELECT * FROM AL_Pasajeros
+SELECT * FROM AL_Pasajes
+SELECT * FROM AL_Vuelos
+SELECT * FROM AL_Aviones
+GO
+
+ALTER PROCEDURE ProcedureMieo
+	@ID char (9),
+	@Nombre varchar (20),
+	@Apellidos varchar (50),
+	@Direccion varchar (60),
+	@FechaNacimiento date,
+	@Nacinalidad varchar (30),
+	@Codigo int
+	AS
+
+BEGIN
+	IF NOT EXISTS (SELECT ID
+					FROM AL_Pasajeros
+					WHERE ID = @ID)
+		BEGIN
+			INSERT INTO AL_Pasajeros
+			(ID, Nombre, Apellidos, Direccion, Fecha_Nacimiento, Nacionalidad)
+			VALUES
+			(@ID, @Nombre, @Apellidos, @Direccion, @FechaNacimiento, @Nacinalidad)
+
+			PRINT 'Usuario ' +@Nombre +' ' +@Apellidos +' creado correctamente'
+		END
+
+	ELSE PRINT 'Te jode, por parguela (Sí existe el pasajero)'
+
+	IF 
+	--Para ver cuantos asientos hay por avión
+	SELECT (Filas*Asientos_x_Fila) AS [Asientos], Codigo
+		FROM AL_Aviones AS a
+		INNER JOIN AL_Vuelos AS v
+		ON a.Matricula = v.Matricula_Avion
+		WHERE Codigo = @Codigo
+
+	--Para ver cuantos sitios hay ocupados
+	SELECT COUNT(Numero) AS [Número de vuelos], ID_Pasajero
+		FROM AL_Pasajes
+		GROUP BY ID_Pasajero
+END
+GO
+
+--Declarar
+DECLARE @ID char (9) = 'A003'
+DECLARE @Nombre varchar (20) = 'Adela'
+DECLARE @Apellidos varchar (50) = 'Benítez'
+DECLARE @Direccion varchar (60) = 'Calle estrecha, 7'
+DECLARE @FechaNacimiento date = '1985-04-01'
+DECLARE @Nacinalidad varchar (30) = 'España'
+DECLARE @Codigo int ='1'
+GO
+
+--Ejecutar
+EXECUTE ProcedureMieo 'L999', 'Leo', 'Maestro', 'No se donde vive', '0001-01-01', 'España', '1'
 
 --Ejercicio 5
 /*Escribe un procedimiento almacenado que cancele un vuelo y reubique a sus pasajeros en otro.
