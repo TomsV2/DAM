@@ -16,7 +16,7 @@ public class muestraContenido {
 		String c;
 		
 		try{
-			lector = new FileReader ("C:\eclipse"); //No se poner una ruta para leer los archivos y carpetas que tiene
+			lector = new FileReader ("EntradaTexto.txt"); //No se poner una ruta para leer los archivos y carpetas que tiene
 			buffer = new BufferedReader(lector);
 			
 			while ((c = buffer.readLine()) != null){
