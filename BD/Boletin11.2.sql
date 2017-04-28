@@ -126,20 +126,22 @@ BEGIN
 			PRINT 'Usuario ' +@Nombre +' ' +@Apellidos +' creado correctamente'
 		END
 
-	ELSE PRINT 'Te jode, por parguela (Sí existe el pasajero)'
+	ELSE PRINT 'El pasajero ' +@nombre +' ' +@Apellidos +' ya existe'
 
-	IF 
-	--Para ver cuantos asientos hay por avión
-	SELECT (Filas*Asientos_x_Fila) AS [Asientos], Codigo
-		FROM AL_Aviones AS a
-		INNER JOIN AL_Vuelos AS v
-		ON a.Matricula = v.Matricula_Avion
-		WHERE Codigo = @Codigo
+	BEGIN
+		/*IF
+		--Para ver cuantos asientos hay por avión (Asientos del vuelo = Asientos del avión)
+		SELECT (Filas*Asientos_x_Fila) AS [Asientos]
+			FROM AL_Aviones AS a
+			INNER JOIN AL_Vuelos AS v
+			ON a.Matricula = v.Matricula_Avion
+			WHERE Codigo = @Codigo
 
-	--Para ver cuantos sitios hay ocupados
-	SELECT COUNT(Numero) AS [Número de vuelos], ID_Pasajero
-		FROM AL_Pasajes
-		GROUP BY ID_Pasajero
+		--Para ver cuantos sitios hay ocupados
+		SELECT COUNT(Numero) AS [Número de vuelos], ID_Pasajero
+			FROM AL_Pasajes
+			GROUP BY ID_Pasajero*/
+	END
 END
 GO
 
