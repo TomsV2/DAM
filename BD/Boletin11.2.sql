@@ -110,7 +110,7 @@ ALTER PROCEDURE ProcedureMieo
 	@Direccion varchar (60),
 	@FechaNacimiento date,
 	@Nacinalidad varchar (30),
-	@Codigo int
+	@Codigo int --Número de vuelo
 	AS
 
 BEGIN
