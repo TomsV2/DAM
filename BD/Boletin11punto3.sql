@@ -109,7 +109,7 @@ GO
 --   fechas (inicio y fin). Si el inicio y fin son iguales, calculará la cantidad gastada ese día. Si
 --   el fin es anterior al inicio devolverá 0.
 
-SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_CuantoPapelv2 (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))	END	IF(@fechaFin > @fechaInicio)	BEGIN		SET @cantidadPapel = 0	END	RETURN @cantidadPapelENDGO
+SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_CantidadPapel (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))	END	IF(@fechaFin > @fechaInicio)	BEGIN		SET @cantidadPapel = 0	END	RETURN @cantidadPapelENDGO
 	
 --Declarar
 DECLARE @fechaInicio DATE
@@ -120,10 +120,12 @@ SET @fechaInicio = '2012-01-20'
 SET @fechaFin = '2013-03-14'
 
 --Ejecutar
-SELECT * FROM fn_CuantoPapelv2 (@fechaInicio, @fechaFin)
+SELECT * FROM dbo.fn_CantidadPapel (@fechaInicio, @fechaFin)
 GO
 
 
 --6. Crea una función fn_Entregas a la que se pase un rango de fechas y nos devuelva una
 --   tabla con los códigos de los paquetes entregados y los vehículos que los entregaron entre
 --   esas fechas.
+
+SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_Entregas (@fechaInicio DATE, @fechaFin DATE) RETURNS TABLE ASRETURN SELECT * FROM TL_PaquetesNormales
