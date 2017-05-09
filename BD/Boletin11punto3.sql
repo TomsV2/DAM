@@ -71,21 +71,22 @@ SELECT * FROM TL_PaquetesNormales
 SET DATEFORMAT ymd
 GO
 
-ALTER FUNCTION fn_OcupacionFregoneta (@codigoFregoneta int, @fechaEntrega SMALLDATETIME)
+ALTER FUNCTION fn_OcupacionFregoneta (@codigoFregoneta int, @fechaEntrega DATE)
 RETURNS TABLE AS
 RETURN (SELECT (Alto*Ancho*Largo) AS [Volumen total]
 		  FROM TL_PaquetesNormales
-		  WHERE @codigoFregoneta = codigoFregoneta AND @fechaEntrega = fechaEntrega)
+		  WHERE @codigoFregoneta = codigoFregoneta AND DAY(@fechaEntrega) = DAY(fechaEntrega))
 GO
 
 --Declarar
 DECLARE @codigoFregoneta int
-DECLARE @fechaEntrega SMALLDATETIME
+DECLARE @fechaEntrega DATE
 
 --Dar valores
-SET @codigoFregoneta = '6'
-SET @fechaEntrega = '2015-04-01 11:50:00'
+SET @codigoFregoneta = '1'
+SET @fechaEntrega = '2012-01-20'
 
+--Ejecutar
 SELECT * FROM fn_OcupacionFregoneta (@codigoFregoneta, @fechaEntrega)
 GO
 
@@ -93,11 +94,34 @@ GO
 
 --4. Crea una función fn_CuantoPapel a la que se pase una fecha y nos diga la cantidad total
 --   de papel de envolver que se gastó para los paquetes entregados ese día. Trata la fecha
---   igual que en el anterior.SELECT * FROM TL_PaquetesNormalesGOALTER FUNCTION fn_CuantoPapel (@fechaEntrega SMALLDATETIME)RETURNS TABLE ASRETURN (SELECT (((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001) AS [Mieo]			FROM TL_PaquetesNormales			WHERE @fechaEntrega = fechaEntrega)			CAST (@fechaEntrega AS Date [ ( length ) ] )
+--   igual que en el anterior.SELECT * FROM TL_PaquetesNormalesGOALTER FUNCTION fn_CuantoPapel (@fechaEntrega DATE)RETURNS TABLE ASRETURN (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001) AS [Cuanto de Papel]			FROM TL_PaquetesNormales			WHERE DAY(@fechaEntrega) = DAY(fechaEntrega))
+
+--Declarar
+DECLARE @fechaEntrega DATE
+
+--Dar valores
+SET @fechaEntrega = '2015-04-01'
+
+--Ejecutar
+SELECT * FROM fn_CuantoPapel (@fechaEntrega)
+GO
 --5. Modifica la función anterior para que en lugar de aceptar una fecha, acepte un rango de
 --   fechas (inicio y fin). Si el inicio y fin son iguales, calculará la cantidad gastada ese día. Si
 --   el fin es anterior al inicio devolverá 0.
 
+SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_CuantoPapelv2 (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))	END	IF(@fechaFin > @fechaInicio)	BEGIN		SET @cantidadPapel = 0	END	RETURN @cantidadPapelENDGO
+	
+--Declarar
+DECLARE @fechaInicio DATE
+DECLARE @fechaFin DATE
+
+--Dar valores
+SET @fechaInicio = '2012-01-20'
+SET @fechaFin = '2013-03-14'
+
+--Ejecutar
+SELECT * FROM fn_CuantoPapelv2 (@fechaInicio, @fechaFin)
+GO
 
 
 --6. Crea una función fn_Entregas a la que se pase un rango de fechas y nos devuelva una
