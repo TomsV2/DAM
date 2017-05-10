@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="paises.xsl"?>          
+<Europa>
+    <pais>
+        <nombre>Alemania</nombre>
+        <habitantes unidad="millones">82.4</habitantes>
+        <capital>Berlin</capital>
+        <sigla-pais>D</sigla-pais>
+        <prefijo>0049</prefijo>
+    </pais>
+    <pais>
+        <nombre>Francia</nombre>
+        <habitantes unidad="millones">58.5</habitantes>
+        <capital>Paris</capital>
+        <sigla-pais>F</sigla-pais>
+        <prefijo>0033</prefijo>
+     </pais>
+     <pais>
+        <nombre>Espania</nombre>
+        <habitantes unidad="millones">39.4</habitantes>
+        <capital>Madrid</capital>
+        <sigla-pais>E</sigla-pais>
+        <prefijo>0034</prefijo>
+     </pais>
+</Europa>

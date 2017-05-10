@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="florecillas.xslt"?>
+<jardin propietario="Leo">
+	<planta id="1">
+		<nombre>Helecho</nombre>
+		<tipo>Sombra</tipo>
+	</planta>
+	<planta id="2">
+		<nombre>Aloe vera</nombre>
+		<tipo>Sol</tipo>
+	</planta>
+	<planta id="3">
+		<nombre>Madreselva</nombre>
+		<tipo>Mixta</tipo>
+	</planta>
+	<planta id="4">
+		<nombre>Laurel</nombre>
+	</planta>
+	<planta id="5">
+		<nombre>Costilla de Adán</nombre>
+		<tipo>Mixta</tipo>
+	</planta>
+	<planta id="6">
+		<nombre>Pacífico</nombre>
+	</planta>
+</jardin>
