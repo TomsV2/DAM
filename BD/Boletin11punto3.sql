@@ -128,4 +128,14 @@ GO
 --   tabla con los códigos de los paquetes entregados y los vehículos que los entregaron entre
 --   esas fechas.
 
-SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_Entregas (@fechaInicio DATE, @fechaFin DATE) RETURNS TABLE ASRETURN SELECT * FROM TL_PaquetesNormales
+SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_Entregas (@fechaInicio DATE, @fechaFin DATE) RETURNS TABLE ASRETURN (SELECT Codigo, codigoFregoneta			FROM TL_PaquetesNormales			WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega)		)--Declarar
+DECLARE @fechaInicio DATE
+DECLARE @fechaFin DATE
+
+--Dar valores
+SET @fechaInicio = '2012-01-20'
+SET @fechaFin = '2013-03-14'
+
+--Ejecutar
+SELECT * FROM fn_Entregas(@fechaInicio, @fechaFin)
+GO
