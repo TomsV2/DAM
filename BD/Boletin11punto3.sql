@@ -18,9 +18,9 @@ contienen las dimensiones de cada paquete en centímetros.*/
 --El volumen se expresa en litros (dm3) y será de tipo decimal(6,2).
 
 SELECT * FROM TL_PaquetesNormales
+GO
 
-ALTER FUNCTION fn_VolumenPaquete (@codigo int)
-RETURNS DECIMAL (6,2) AS
+ALTER FUNCTION fn_VolumenPaquete (@codigo int) RETURNS DECIMAL (6,2) AS
 BEGIN
 	RETURN (SELECT ROUND((Alto*Ancho*Largo)*0.001, 1)
 				FROM TL_PaquetesNormales
@@ -94,7 +94,8 @@ GO
 
 --4. Crea una función fn_CuantoPapel a la que se pase una fecha y nos diga la cantidad total
 --   de papel de envolver que se gastó para los paquetes entregados ese día. Trata la fecha
---   igual que en el anterior.SELECT * FROM TL_PaquetesNormalesGOALTER FUNCTION fn_CuantoPapel (@fechaEntrega DATE)RETURNS TABLE ASRETURN (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001) AS [Cuanto de Papel]			FROM TL_PaquetesNormales			WHERE DAY(@fechaEntrega) = DAY(fechaEntrega))
+--   igual que en el anterior.SELECT * FROM TL_PaquetesNormalesGOALTER FUNCTION fn_CuantoPapel (@fechaEntrega DATE) RETURNS TABLE ASRETURN (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001) AS [Cuanto de Papel]			FROM TL_PaquetesNormales			WHERE DAY(@fechaEntrega) = DAY(fechaEntrega))
+GO
 
 --Declarar
 DECLARE @fechaEntrega DATE
@@ -109,7 +110,10 @@ GO
 --   fechas (inicio y fin). Si el inicio y fin son iguales, calculará la cantidad gastada ese día. Si
 --   el fin es anterior al inicio devolverá 0.
 
-SELECT * FROM TL_PaquetesNormalesGOCREATE FUNCTION fn_CantidadPapel (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))	END	IF(@fechaFin > @fechaInicio)	BEGIN		SET @cantidadPapel = 0	END	RETURN @cantidadPapelENDGO
+SELECT * FROM TL_PaquetesNormalesGOSET DATEFORMAT ymd
+GO/*ALTER FUNCTION fn_CantidadPapel (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE @fechaInicio >= CAST(fechaEntrega AS DATE) AND @fechaFin <= CAST(fechaEntrega AS DATE))	END	IF(@fechaFin > @fechaInicio)	BEGIN		SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)							     FROM TL_PaquetesNormales						         WHERE @fechaInicio >= CAST(fechaEntrega AS DATE) AND @fechaFin <= CAST(fechaEntrega AS DATE))	END	IF(@fechaFin < @fechaInicio)	BEGIN		SET @cantidadPapel = 0	END	RETURN @cantidadPapelENDGO*/
+
+ALTER FUNCTION fn_CantidadPapel (@fechaInicio DATE, @fechaFin DATE) RETURNS DECIMAL(6,2) ASBEGIN	DECLARE @cantidadPapel AS DECIMAL(6,2)	IF(@fechaInicio = @fechaFin)		BEGIN			SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)									 FROM TL_PaquetesNormales									 WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))		END	IF(@fechaFin < @fechaInicio)		BEGIN			SET @cantidadPapel = 0		END	ELSE		BEGIN			SET @cantidadPapel = (SELECT SUM(((2*(Ancho*Alto) + 2*(Ancho*Largo) + 2*(Largo*Alto)) * 1.8) * 0.0001)									 FROM TL_PaquetesNormales									 WHERE DAY(@fechaInicio) >= DAY(fechaEntrega) AND DAY(@fechaFin) <= DAY(fechaEntrega))		END	RETURN @cantidadPapelENDGO
 	
 --Declarar
 DECLARE @fechaInicio DATE
@@ -120,7 +124,7 @@ SET @fechaInicio = '2012-01-20'
 SET @fechaFin = '2013-03-14'
 
 --Ejecutar
-SELECT * FROM dbo.fn_CantidadPapel (@fechaInicio, @fechaFin)
+SELECT dbo.fn_CantidadPapel (@fechaInicio, @fechaFin) AS [Cantidad de papel]
 GO
 
 
