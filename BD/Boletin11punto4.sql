@@ -6,20 +6,59 @@ SELECT * FROM LM_Recargas
 SELECT * FROM LM_Tarjetas
 GO
 
-CREATE PROCEDURE RecargarTarjeta (@IdTarjeta INT, @Importe MONEY) AS
+CREATE PROCEDURE RecargarTarjeta (@IdTarjeta INT, @Importe SMALLMONEY) AS
 	BEGIN
 		BEGIN TRANSACTION
+			--Actualizamos el saldo de la tarjeta (por la tabla LM_Tarjetas)
+			UPDATE LM_Tarjetas 
+			SET Saldo = Saldo + @Importe --Al saldo le sumamos el importe que le pasamos (@Importe) y lo volvemos a meter en saldo
+				FROM LM_Tarjetas
+				WHERE @IdTarjeta = ID --Hacemos que corresponda la ID de la tarjeta qu equeremos recargar (@IdTarjeta) con la comuna ID de la tabla LM_Tarjetas
+
+			--Grabamos la correspondiente nueva recarga utilizando INSERT INTO para insertar algo nuevo en la tabla de recargas (LM_Recargas)
+			INSERT INTO LM_Recargas
+				(ID, ID_Tarjeta, Cantidad_Recarga, Momento_Recarga, SaldoResultante) --Estos son los valores que vamos a insertar como nuevos
+				SELECT NEWID(), @IdTarjeta, @Importe, CURRENT_TIMESTAMP, Saldo --Seleccionamos los valores que introduciremos en cada campo anterior
+					FROM LM_Tarjetas --Algunos valores los sacamos de LM_Tarjetas, de los parámetros que introducirá el usuario y del propio sistema como CURRENT_TIMESTAMP
+					WHERE @IdTarjeta = ID --Tiene que coincidir la ID de la tarjeta que mandamos con la ID de la tarjeta que queremos cambiar de la tabla
 		COMMIT TRANSACTION
 	END
+GO
+
+--Declarar las variables
+DECLARE @IdTarjeta INT = 3
+DECLARE @Importe MONEY = 1.20
+
+--Ejecutar
+EXECUTE RecargarTarjeta @IdTarjeta, @Importe
+
+--Comprobamos que se ha realizado correctamente el INSERT INTO en la tabla LM_Recargas
+SELECT * FROM LM_Recargas
+
+--Comprobamos que en la tabla LM_Tarjetas se ha sumado bien el importe expecificado
+SELECT * FROM LM_Tarjetas
+
+GO
 
 --Ejercicio 0
 /*La dimisión de Esperanza Aguirre ha causado tal conmoción entre los directivos de LeoMetro que han decidido 
 conceder una amnistía a todos los pasajeros que tengan un saldo negativo en sus tarjetas.
 
-Crea un procedimiento que racargue la cantidad necesaria para dejar a 0 el saldo de las tarjetas que 
+Crea un procedimiento que recargue la cantidad necesaria para dejar a 0 el saldo de las tarjetas que 
 tengan un saldo negativo y hayan sido recargadas al menos una vez en los últimos dos meses.
 
 Ejercicio elaborado en colaboración con Sefran.*/
+
+SELECT * FROM LM_Recargas
+SELECT * FROM LM_Tarjetas
+GO
+
+CREATE PROCEDURE RecargarTarjetaV2 AS
+	BEGIN
+		BEGIN TRANSACTION
+			
+		COMMIT TRANSACTION
+	END
 
 --Ejercicio 2
 /*Crea un procedimiento almacenado llamado PasajeroSale que reciba como parámetros el ID de una tarjeta, el ID de una estación y una fecha/hora (opcional).
