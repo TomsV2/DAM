@@ -26,8 +26,8 @@ CREATE PROCEDURE RecargarTarjeta (@IdTarjeta INT, @Importe SMALLMONEY) AS
 GO
 
 --Declarar las variables
-DECLARE @IdTarjeta INT = 3
-DECLARE @Importe MONEY = 1.20
+DECLARE @IdTarjeta INT = 2
+DECLARE @Importe MONEY = 0.20
 
 --Ejecutar
 EXECUTE RecargarTarjeta @IdTarjeta, @Importe
@@ -56,7 +56,15 @@ GO
 CREATE PROCEDURE RecargarTarjetaV2 AS
 	BEGIN
 		BEGIN TRANSACTION
-			
+			UPDATE LM_Tarjetas
+			SET Saldo = 0
+				FROM LM_Tarjetas
+				where
+			SELECT ID_Tarjeta
+				FROM LM_Recargas
+				WHERE SaldoResultante<0
+
+
 		COMMIT TRANSACTION
 	END
 
