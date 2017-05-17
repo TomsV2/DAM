@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="encuestita.xsl"?> 
+<encuesta>
+
+	<cuestion tipo='multiple'>
+
+		<pregunta>¿Eres un listo?</pregunta>
+
+		<respuesta>Si</respuesta>
+
+		<respuesta>No</respuesta>
+
+		<respuesta>Lo que diga Asun</respuesta>
+
+		<respuesta>Tengo dias</respuesta>
+
+	</cuestion>
+
+	<cuestion tipo='multiple'>
+
+		<pregunta>¿Porque pierdes tu tiempo contestando encuestas?</pregunta>
+
+		<respuesta>Porque no tengo nada mejor que hacer</respuesta>
+
+		<respuesta>Porque me lo ha dicho Leo</respuesta>
+
+		<respuesta>A tí te lo voy a decir, so listo</respuesta>
+
+		<respuesta>¿Sabes el chiste del loro?</respuesta>
+
+	</cuestion>
+
+	<cuestion tipo='multiple'>
+
+		<pregunta>¿Cómo considera la coyuntura actual de la mejora de las prestaciones en orden a una europeización más completa?</pregunta>
+
+		<respuesta>Epatante</respuesta>
+
+		<respuesta>No contestaré a preguntas excluyentes</respuesta>
+
+		<respuesta>La considero positivante y conducente a unas relaciones más  normalizadas con el conjunto de los agentes socioeconómicos</respuesta>
+
+		<respuesta>¡Viva el vino!</respuesta>
+
+	</cuestion>
+
+	<cuestion tipo='multiple'>
+
+		<pregunta>¿Qué haces para luchar contra lo homofobia y la transfobia?</pregunta>
+
+		<respuesta>Escribo twits</respuesta>
+
+		<respuesta>Tengo un amigo gay</respuesta>
+
+		<respuesta>Hago como si no existieran</respuesta>
+
+		<respuesta>Machete al machote</respuesta>
+
+	</cuestion>
+
+</encuesta>
