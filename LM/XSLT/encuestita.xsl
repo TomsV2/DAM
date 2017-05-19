@@ -6,10 +6,12 @@
 				<h1>Encuesta</h1>
 				<xsl:for-each select="encuesta/cuestion">
 				
-					<p><xsl:value-of select="pregunta" /></p>
+					<p><b><xsl:value-of select="pregunta" /></b></p>
 					
 					<select>
-						<option><xsl:value-of select="respuesta" /></option>
+						<xsl:for-each select="respuesta">
+						<option><xsl:value-of select="." /></option>
+						</xsl:for-each>
 					</select>
 					
 				</xsl:for-each>
